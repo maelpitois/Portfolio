@@ -1,0 +1,92 @@
+<!DOCTYPE html>  
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet - Base de données qualité de l'air</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hover-grow:hover {
+      transform: scale(1.05);
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.2s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    .border-black {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans leading-normal fade-in min-h-screen flex flex-col">
+
+  <!-- Section Navigation -->
+  <header class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-extrabold">Maël Pitois</h1>
+      <nav class="space-x-4">
+        <a href="index.html#about" class="hover:underline text-lg">À propos</a>
+        <a href="index.html#projects" class="hover:underline text-lg">Projets</a>
+        <a href="index.html#skills" class="hover:underline text-lg">Compétences</a>
+        <a href="index.html#contact" class="hover:underline text-lg">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section Détails du Projet -->
+  <section id="project-details" class="container mx-auto px-6 py-20 flex-grow">
+    <div class="bg-white rounded-lg shadow-lg p-10 max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4 text-gray-800">Base de données qualité de l'air</h2>
+      <p class="text-xl mb-6 text-gray-600">Ce projet consiste à créer une base de données MySQL pour stocker et analyser des relevés de la qualité de l'air dans différentes régions. L'objectif est d'assurer une gestion efficace des données pour leur consultation et leur analyse.</p>
+      
+      <h3 class="text-2xl font-semibold mb-4 text-gray-700">Fonctionnalités principales :</h3>
+      <ul class="list-disc list-inside mb-6 text-gray-600">
+        <li>Stockage structuré des données de qualité de l'air avec MySQL.</li>
+        <li>Utilisation de requêtes SQL pour l'analyse des données.</li>
+        <li>Optimisation de la BDD afin d'optimiser le temps pour la consultation des données.</li>
+        <li>Utilisation d'un MCD et d'un MLD pour la modélisation de la base de données.</li>
+      </ul>
+
+      <!-- MCD Image -->
+      <div class="mb-6">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Modèle Conceptuel de Données (MCD)</h3>
+        <img src="img-MCD-bdd.png" alt="MCD" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
+        <p class="text-lg text-gray-700 mt-2">Le MCD illustre les entités principales (représentées par les blocs bleus) et leurs relations (représentées par les blocs orange) pour modéliser les informations nécessaires à la gestion des relevés de qualité de l'air. Il permet d'établir la base de notre BDD.</p>
+      </div>
+
+      <!-- MLD Image -->
+      <div class="mb-6">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Modèle Logique de Données (MLD)</h3>
+        <img src="img-MLD-bdd.png" alt="MLD" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
+        <p class="text-lg text-gray-700 mt-2">Après avoir schématisé le MCD, il faut faire le MLD qui traduit le MCD en une structure adaptée à la base de données relationnelle, détaillant les tables et leurs relations. Ensuite, il faut implémenter le MLD dans le logiciel MySQL et la BDD est créée. </p>
+      </div>
+
+      <!-- Requête SQL Image -->
+      <div class="mb-6">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Exemple de Requête SQL</h3>
+        <img src="img-requete-bdd.png" alt="Requête SQL" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
+        <p class="text-lg text-gray-700 mt-2">Pour finir ce projet il suffit de tester la BDD avec des requêtes, voici un exemple de requête SQL utilisée pour obtenir la quantité de gaz relevée dans la région "Ile de France" pour l'année 2020, en groupant par type de gaz.</p>
+      </div>
+
+      <!-- Bouton Retour et Lien GitHub -->
+      <div class="flex space-x-4">
+        <a href="index.html#projects" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Retour aux projets</a>
+        <a href="https://github.com/maelpitois/Projet_BDD" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet sur GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2024 Maël Pitois. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

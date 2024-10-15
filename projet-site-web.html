@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Création d'un site web</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hover-grow:hover {
+      transform: scale(1.05);
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.2s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans leading-normal fade-in min-h-screen flex flex-col">
+
+  <!-- Section Navigation -->
+  <header class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-extrabold">Maël Pitois</h1>
+      <nav class="space-x-4">
+        <a href="index.html#about" class="hover:underline text-lg">À propos</a>
+        <a href="index.html#projects" class="hover:underline text-lg">Projets</a>
+        <a href="index.html#skills" class="hover:underline text-lg">Compétences</a>
+        <a href="index.html#contact" class="hover:underline text-lg">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section Détails du Projet -->
+  <section id="project-details" class="container mx-auto px-6 py-20 flex-grow">
+    <div class="bg-white rounded-lg shadow-lg p-10 max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4 text-gray-800">Création d'un site web</h2>
+      <p class="text-xl mb-6 text-gray-600">Ce projet consiste à développer un site web en HTML et CSS qui présente les 8 plus grandes innovations.</p>
+      <h3 class="text-2xl font-semibold mb-4 text-gray-700">Fonctionnalités principales :</h3>
+      <ul class="list-disc list-inside mb-6 text-gray-600">
+        <li>Utilisation du CSS pour la mise en page et la gestion du style.</li>
+        <li>Navigation intuitive</li>
+      </ul>
+      <a href="index.html#projects" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Retour aux projets</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2024 Maël Pitois. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
