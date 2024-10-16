@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet - Répertoire téléphonique</title>
+  <title>Projet - Simulateur de Modulation ASK et FSK</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     .hover-grow:hover {
@@ -17,6 +17,9 @@
       to {
         opacity: 1;
       }
+    }
+    .border-black {
+      border: 1px solid black;
     }
 
   </style>
@@ -39,17 +42,51 @@
   <!-- Section Détails du Projet -->
   <section id="project-details" class="container mx-auto px-6 py-20 flex-grow overlay">
     <div class="bg-white rounded-lg shadow-lg p-10 max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-4 text-gray-800">Développement d'un Simulateur de Modulation ASK et FSK en Python</h2>
-      <p class="text-xl mb-6 text-gray-600">Ce projet vise à créer un simulateur de modulation en Python, illustrant le processus d'encodage et de transmission d'un message par modulation d'amplitude (ASK). Il montre comment un fichier texte est converti en signal binaire modulé, puis transmis et reçu via un canal de communication simulé, en suivant les étapes classiques de la chaîne de transmission numérique (encodage, modulation, démodulation, décodage). </p>
+      <h2 class="text-4xl font-bold mb-4 text-gray-800">Simulateur de Modulation ASK et FSK en Python</h2>
+      <p class="text-xl mb-6 text-gray-600">Ce projet consiste à développer un simulateur qui illustre le processus de modulation d'amplitude (ASK) et de fréquence (FSK) en Python. L'objectif est de montrer comment un message peut être encodé, modulé et transmis via une chaîne de transmission numérique avant d'être reçu et décodé.</p>
+
       <h3 class="text-2xl font-semibold mb-4 text-gray-700">Fonctionnalités principales :</h3>
       <ul class="list-disc list-inside mb-6 text-gray-600">
         <li>Encodage : Conversion d'un fichier texte en code ASCII, puis en signal binaire.</li>
-        <li>Modulation : Application de la modulation d'amplitude (ASK) sur le signal binaire.</li>
+        <li>Modulation : Application des modulations ASK et FSK sur le signal binaire.</li>
         <li>Transmission : Simulation d'une transmission via un canal de communication.</li>
-        <li>Réception : Démodulation et décodage du signal reçu pour reconstituer le fichier d'origine.</li>
-        <li>Chaîne complète : Représentation des étapes classiques (encodage, modulation, transmission, démodulation, décodage).</li>
+        <li>Réception : Démodulation et décodage du signal reçu pour reconstituer le message original.</li>
+        <li>Comparaison des performances entre les modulations ASK et FSK.</li>
       </ul>
-      <a href="index.html#projects" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Retour aux projets</a>
+
+      <!-- Image Chaîne de Transmission -->
+      <div class="mb-6">.
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Chaîne de transmission</h3>
+        <img src="img-chaine-transmission-modulation.png" alt="Chaîne de transmission" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
+        <p class="text-lg text-gray-700 mt-2">Cette image illustre le processus de transmission d'un message, depuis l'encodage jusqu'à la réception, en passant par la modulation et la transmission via un canal simulé.</p>
+      </div>
+
+      <!-- Image Destinataire -->
+      <div class="mb-6">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Destinataire et Démodulation</h3>
+        <img src="img-destinataire-modulation.png" alt="Destinataire et Démodulation" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
+        <p class="text-lg text-gray-700 mt-2">L'étape de réception consiste à démoduler le signal pour extraire le message d'origine. Dans cette partie du code, nous devons choisir l'expéditeur du message ainsi que son destinataire.</p>
+      </div>
+
+      <!-- Image Choix de Modulation -->
+      <div class="mb-6">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Choix de la modulation (ASK ou FSK)</h3>
+        <img src="img-choix-modulation.png" alt="Choix de modulation" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
+        <p class="text-lg text-gray-700 mt-2">Le simulateur permet de choisir entre deux techniques de modulation : ASK (Amplitude Shift Keying) ou FSK (Frequency Shift Keying). Chaque méthode a ses avantages en fonction du bruit et des conditions du canal.</p>
+      </div>
+
+      <!-- Image Résultat de Modulation -->
+      <div class="mb-6">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Résultat de la modulation</h3>
+        <img src="img-resultat-modulation.png" alt="Résultat de modulation" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
+        <p class="text-lg text-gray-700 mt-2">Cette image présente les résultats obtenus après la modulation, transmission et réception d'un message.</p>
+      </div>
+
+      <!-- Boutons Retour et Lien GitHub -->
+      <div class="flex space-x-4">
+        <a href="index.html#projects" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Retour aux projets</a>
+        <a href="https://github.com/maelpitois/Projet_Modulation" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet sur GitHub</a>
+      </div>
     </div>
   </section>
 
