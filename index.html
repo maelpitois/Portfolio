@@ -8,7 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        /* Ajout d'animations */
         .hover-grow:hover {
             transform: scale(1.05);
         }
@@ -59,43 +58,37 @@
         </div>
     </section>
 
+    <!-- Section Compétences -->
+    <section id="skills" class="bg-gray-200 container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Mes compétences</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-screen-lg mx-auto">
 
-        <!-- Section Compétences -->
-        <section id="skills" class="bg-gray-200 container mx-auto px-4 py-16">
-          <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Mes compétences</h2>
-          <!-- Utilisation de la grille avec deux colonnes -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-screen-lg mx-auto">
-  
-              <!-- Python  -->
-              <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
-                  <img src="img-logo-python.jpg" alt="Python" class="w-24 h-24 mx-auto mb-4 object-contain">
-                  <h3 class="text-xl font-bold mb-2 text-gray-700">Python et C</h3>
-                  <p class="text-gray-600">3 ans d'expérience en programmation avec le langage Python et 2 ans en langage C.</p>
-              </div>
-  
-              <!-- HTML & CSS  -->
-              <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
-                  <img src="img-logo-html-css.png" alt="HTML & CSS" class="w-24 h-24 mx-auto mb-4 object-contain">
-                  <h3 class="text-xl font-bold mb-2 text-gray-700">HTML & CSS</h3>
-                  <p class="text-gray-600">Création de sites web avec HTML et CSS.</p>
-              </div>
-  
-              <!-- MySQL  -->
-              <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
-                  <img src="img-logo-mysql.png" alt="MySQL" class="w-24 h-24 mx-auto mb-4 object-contain">
-                  <h3 class="text-xl font-bold mb-2 text-gray-700">MySQL</h3>
-                  <p class="text-gray-600">Conception et gestion de bases de données avec MySQL et utilisation de requêtes SQL.</p>
-              </div>
-  
-              <!-- Github  -->
-              <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
-                  <img src="img-logo-github.png" alt="Github" class="w-24 h-24 mx-auto mb-4 object-contain">
-                  <h3 class="text-xl font-bold mb-2 text-gray-700">Github</h3>
-                  <p class="text-gray-600">Gestion de versionnement avec Github pour le suivi de projet en équipe.</p>
-              </div>
-  
-          </div>
-      </section>
+            <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
+                <img src="img-logo-python.jpg" alt="Python" class="w-24 h-24 mx-auto mb-4 object-contain">
+                <h3 class="text-xl font-bold mb-2 text-gray-700">Python et C</h3>
+                <p class="text-gray-600">3 ans d'expérience en programmation avec le langage Python et 2 ans en langage C.</p>
+            </div>
+
+            <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
+                <img src="img-logo-html-css.png" alt="HTML & CSS" class="w-24 h-24 mx-auto mb-4 object-contain">
+                <h3 class="text-xl font-bold mb-2 text-gray-700">HTML & CSS</h3>
+                <p class="text-gray-600">Création de sites web avec HTML et CSS.</p>
+            </div>
+
+            <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
+                <img src="img-logo-mysql.png" alt="MySQL" class="w-24 h-24 mx-auto mb-4 object-contain">
+                <h3 class="text-xl font-bold mb-2 text-gray-700">MySQL</h3>
+                <p class="text-gray-600">Conception et gestion de bases de données avec MySQL et utilisation de requêtes SQL.</p>
+            </div>
+
+            <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
+                <img src="img-logo-github.png" alt="Github" class="w-24 h-24 mx-auto mb-4 object-contain">
+                <h3 class="text-xl font-bold mb-2 text-gray-700">Github</h3>
+                <p class="text-gray-600">Gestion de versionnement avec Github pour le suivi de projet en équipe.</p>
+            </div>
+
+        </div>
+    </section>
 
     <!-- Section Projets -->
     <section id="projects" class="bg-white py-20">
@@ -103,72 +96,75 @@
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Projets</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Projet 1 : Répertoire téléphonique -->
                 <div class="bg-gray-200 p-6 shadow-md rounded-lg hover-grow transition-transform duration-300">
-                    <img src="img-projet-repertoire.webp" alt="Image du projet Répertoire téléphonique" class="w-full h-40 object-cover mb-4 rounded">
+                    <img src="img-projet-repertoire.webp" alt="Répertoire téléphonique" class="w-full h-40 object-cover mb-4 rounded">
                     <h3 class="text-xl font-bold mb-2 text-gray-700">Répertoire téléphonique</h3>
                     <p class="mb-4 text-gray-600">Développement d'un programme Python pour la gestion des contacts avec un fichier exécutable.</p>
                     <a href="projet-repertoire.html" class="inline-block mt-4 bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet</a>
                 </div>
 
-                <!-- Projet 2 : Base de données qualité de l'air -->
                 <div class="bg-gray-200 p-6 shadow-md rounded-lg hover-grow transition-transform duration-300">
-                    <img src="img-projet-bdd.jpg" alt="Image du projet Base de données qualité de l'air" class="w-full h-40 object-cover mb-4 rounded">
+                    <img src="img-projet-bdd.jpg" alt="Base de données qualité de l'air" class="w-full h-40 object-cover mb-4 rounded">
                     <h3 class="text-xl font-bold mb-2 text-gray-700">Base de données qualité de l'air</h3>
                     <p class="mb-4 text-gray-600">Création d'une base de données MySQL pour le stockage et l'analyse des relevés de la qualité de l'air.</p>
                     <a href="projet-base-donnees.html" class="inline-block mt-4 bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet</a>
                 </div>
 
-                <!-- Projet 3 : Développement d'un Simulateur de Modulation ASK en Python -->
                 <div class="bg-gray-200 p-6 shadow-md rounded-lg hover-grow transition-transform duration-300">
-                    <img src="img-projet-signal.webp" alt="Image du projet Répertoire téléphonique" class="w-full h-40 object-cover mb-4 rounded">
-                    <h3 class="text-xl font-bold mb-2 text-gray-700">Développement d'un Simulateur de Modulation ASK et FSK en Python</h3>
-                    <p class="mb-4 text-gray-600">Développement d'un programme Python pour simuler une modulation ASK et FSK, pour voir l'encodage d'un message jusqu'à sa réception.</p>
+                    <img src="img-projet-signal.webp" alt="Simulateur de Modulation ASK" class="w-full h-40 object-cover mb-4 rounded">
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">Simulateur de Modulation ASK et FSK en Python</h3>
+                    <p class="mb-4 text-gray-600">Développement d'un programme pour simuler la modulation ASK et FSK, pour encoder et recevoir un message.</p>
                     <a href="projet-modulation.html" class="inline-block mt-4 bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet</a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-
-
-    <!-- Section Contact -->
-    <section id="contact" class="bg-gray-200 py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Contactez-moi</h2>
-            <div class="text-center">
-                <p class="text-xl mb-8 text-gray-600">N'hésitez pas à me contacter par e-mail ou par téléphone :</p>
-                <div class="flex justify-center space-x-6 mb-8">
-                    <!-- Email avec icône Gmail -->
-                    <div>
-                        <a href="mailto:mael.pitois@gmail.com" class="text-gray-700 hover:text-gray-900 transition-colors">
-                            <i class="fas fa-envelope h-8 w-8 inline-block"></i>
-                            <span class="ml-2 text-lg">mael.pitois@gmail.com</span>
-                        </a>
-                    </div>
-
-                    <span class="text-gray-500 text-lg">ou</span>
-
-                    <!-- Email avec icône ViaCESI -->
-                    <div>
-                        <a href="mailto:mael.pitois@viacesi.fr" class="text-gray-700 hover:text-gray-900 transition-colors">
-                            <i class="fas fa-envelope h-8 w-8 inline-block"></i>
-                            <span class="ml-2 text-lg">mael.pitois@viacesi.fr</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Numéro de téléphone avec icône téléphone -->
-                <div class="mt-6">
-                    <a href="tel:+33783088785" class="text-gray-700 hover:text-gray-900 transition-colors">
-                        <i class="fas fa-phone h-8 w-8 inline-block"></i>
-                        <span class="ml-2 text-lg">07 83 08 87 85</span>
-                    </a>
+                <!-- Projet 4 -->
+                <div class="bg-gray-200 p-6 shadow-md rounded-lg hover-grow transition-transform duration-300">
+                    <img src="img1-projet-systeme-embarquee.png" alt="Station météo embarquée" class="w-full h-40 object-cover mb-4 rounded">
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">Création d'une station météo embarquée</h3>
+                    <p class="mb-4 text-gray-600">Projet de conception et de développement d'une station météo embarquée en utilisant un Arduino Uno et divers capteurs Grove pour relever et analyser les données météo.</p>
+                    <a href="projet-systeme_embarque.html" class="inline-block mt-4 bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet</a>
                 </div>
             </div>
         </div>
     </section>
 
-</body>
-
-</html>
+        <!-- Section Contact -->
+        <section id="contact" class="bg-gray-200 py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Contactez-moi</h2>
+                <div class="text-center">
+                    <p class="text-xl mb-8 text-gray-600">N'hésitez pas à me contacter par e-mail ou par téléphone :</p>
+                    <div class="flex justify-center space-x-6 mb-8">
+                        <!-- Email avec icône Gmail -->
+                        <div>
+                            <a href="mailto:mael.pitois@gmail.com" class="text-gray-700 hover:text-gray-900 transition-colors">
+                                <i class="fas fa-envelope h-8 w-8 inline-block"></i>
+                                <span class="ml-2 text-lg">mael.pitois@gmail.com</span>
+                            </a>
+                        </div>
+    
+                        <span class="text-gray-500 text-lg">ou</span>
+    
+                        <!-- Email avec icône ViaCESI -->
+                        <div>
+                            <a href="mailto:mael.pitois@viacesi.fr" class="text-gray-700 hover:text-gray-900 transition-colors">
+                                <i class="fas fa-envelope h-8 w-8 inline-block"></i>
+                                <span class="ml-2 text-lg">mael.pitois@viacesi.fr</span>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <!-- Numéro de téléphone avec icône téléphone -->
+                    <div class="mt-6">
+                        <a href="tel:+33783088785" class="text-gray-700 hover:text-gray-900 transition-colors">
+                            <i class="fas fa-phone h-8 w-8 inline-block"></i>
+                            <span class="ml-2 text-lg">07 83 08 87 85</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    </body>
+    
+    </html>
