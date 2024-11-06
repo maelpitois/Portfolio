@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Maël Pitois</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .hover-grow:hover {
+            transform: scale(1.05);
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900 font-sans leading-normal fade-in">
+
+    <!-- Section Navigation -->
+    <header class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold">Maël Pitois</h1>
+            <p class="text-lg">Étudiant ingénieur Informatique - 2ème année à CESI École d'Ingénieur
+                Saint-Étienne-du-Rouvray</p>
+            <nav class="space-x-4">
+                <a href="#about" class="hover:underline text-lg">À propos</a>
+                <a href="#projects" class="hover:underline text-lg">Projets</a>
+                <a href="#skills" class="hover:underline text-lg">Compétences</a>
+                <a href="#contact" class="hover:underline text-lg">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Introduction -->
+    <section id="about" class="container mx-auto px-6 py-12 text-center">
+        <div class="bg-white rounded-lg shadow-lg p-6 max-w-3xl mx-auto hover-grow transition-transform duration-300">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800">Bienvenue</h2>
+            <p class="text-lg mb-4 text-gray-600">
+                Âgé de 18 ans, je suis en 2ème année de cycle préparatoire à CESI École d'Ingénieurs à Saint-Étienne-du-Rouvray, spécialisé en informatique. Passionné par les technologies, j’ai acquis des compétences solides en Python, HTML, CSS et SQL à travers divers projets académiques et personnels.
+            </p>
+            <p class="text-lg mb-4 text-gray-600">
+                Je suis motivé à mettre mes compétences en pratique, que ce soit en équipe ou en autonomie, et à approfondir mon expertise en ingénierie informatique.
+            </p>
+            <a href="#contact" class="bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">
+                Me contacter
+            </a>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="skills" class="bg-gray-200 container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Mes compétences</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-screen-lg mx-auto">
+
+            <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
+                <img src="img-logo-python.jpg" alt="Python" class="w-24 h-24 mx-auto mb-4 object-contain">
+                <h3 class="text-xl font-bold mb-2 text-gray-700">Python et C</h3>
+                <p class="text-gray-600">3 ans d'expérience en programmation avec le langage Python et 2 ans en langage C.</p>
+            </div>
+
+            <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
+                <img src="img-logo-html-css.png" alt="HTML & CSS" class="w-24 h-24 mx-auto mb-4 object-contain">
+                <h3 class="text-xl font-bold mb-2 text-gray-700">HTML & CSS</h3>
+                <p class="text-gray-600">Création de sites web avec HTML et CSS.</p>
+            </div>
+
+            <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
+                <img src="img-logo-mysql.png" alt="MySQL" class="w-24 h-24 mx-auto mb-4 object-contain">
+                <h3 class="text-xl font-bold mb-2 text-gray-700">MySQL</h3>
+                <p class="text-gray-600">Conception et gestion de bases de données avec MySQL et utilisation de requêtes SQL.</p>
+            </div>
+
+            <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
+                <img src="img-logo-github.png" alt="Github" class="w-24 h-24 mx-auto mb-4 object-contain">
+                <h3 class="text-xl font-bold mb-2 text-gray-700">Github</h3>
+                <p class="text-gray-600">Gestion de versionnement avec Github pour le suivi de projet en équipe.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects" class="bg-white py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Projets</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-gray-200 p-6 shadow-md rounded-lg hover-grow transition-transform duration-300">
+                    <img src="img-projet-repertoire.webp" alt="Répertoire téléphonique" class="w-full h-40 object-cover mb-4 rounded">
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">Répertoire téléphonique</h3>
+                    <p class="mb-4 text-gray-600">Développement d'un programme Python pour la gestion des contacts avec un fichier exécutable.</p>
+                    <a href="projet-repertoire.html" class="inline-block mt-4 bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet</a>
+                </div>
+
+                <div class="bg-gray-200 p-6 shadow-md rounded-lg hover-grow transition-transform duration-300">
+                    <img src="img-projet-bdd.jpg" alt="Base de données qualité de l'air" class="w-full h-40 object-cover mb-4 rounded">
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">Base de données qualité de l'air</h3>
+                    <p class="mb-4 text-gray-600">Création d'une base de données MySQL pour le stockage et l'analyse des relevés de la qualité de l'air.</p>
+                    <a href="projet-base-donnees.html" class="inline-block mt-4 bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet</a>
+                </div>
+
+                <div class="bg-gray-200 p-6 shadow-md rounded-lg hover-grow transition-transform duration-300">
+                    <img src="img-projet-signal.webp" alt="Simulateur de Modulation ASK" class="w-full h-40 object-cover mb-4 rounded">
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">Simulateur de Modulation ASK et FSK en Python</h3>
+                    <p class="mb-4 text-gray-600">Développement d'un programme pour simuler la modulation ASK et FSK, pour encoder et recevoir un message.</p>
+                    <a href="projet-modulation.html" class="inline-block mt-4 bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet</a>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="bg-gray-200 p-6 shadow-md rounded-lg hover-grow transition-transform duration-300">
+                    <img src="img1-projet-systeme-embarquee.png" alt="Station météo embarquée" class="w-full h-40 object-cover mb-4 rounded">
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">Création d'une station météo embarquée</h3>
+                    <p class="mb-4 text-gray-600">Projet de conception et de développement d'une station météo embarquée en utilisant un Arduino Uno et divers capteurs Grove pour relever et analyser les données météo.</p>
+                    <a href="projet-systeme_embarque.html" class="inline-block mt-4 bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Section Contact -->
+    <section id="contact" class="bg-gray-200 py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Contactez-moi</h2>
+            <div class="text-center">
+                <p class="text-xl mb-8 text-gray-600">N'hésitez pas à me contacter par e-mail ou par téléphone :</p>
+                <div class="flex justify-center items-center space-x-6 mb-8">
+                <!-- Email -->
+                <div>
+                    <a href="mailto:mael.pitois@gmail.com" class="text-gray-700 hover:text-gray-900 transition-colors">
+                        <i class="fas fa-envelope h-8 w-8 inline-block"></i>
+                        <span class="ml-2 text-lg">mael.pitois@gmail.com</span>
+                    </a>
+                </div>
+
+                <!-- Numéro de téléphone -->
+                <div>
+                    <a href="tel:+33783088785" class="text-gray-700 hover:text-gray-900 transition-colors">
+                        <i class="fas fa-phone h-8 w-8 inline-block"></i>
+                        <span class="ml-2 text-lg">07 83 08 87 85</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    
+    </body>
+    
+    </html>
