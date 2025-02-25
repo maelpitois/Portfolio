@@ -1,0 +1,90 @@
+<!DOCTYPE html>  
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet - Configuration du réseau d'une ville sur Cisco Packet Tracer</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hover-grow:hover {
+      transform: scale(1.05);
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.2s forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    .border-black {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans leading-normal fade-in min-h-screen flex flex-col">
+
+  <!-- Section Navigation -->
+  <header class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-extrabold">Maël Pitois</h1>
+      <nav class="space-x-4">
+        <a href="index.html#about" class="hover:underline text-lg">À propos</a>
+        <a href="index.html#projects" class="hover:underline text-lg">Projets</a>
+        <a href="index.html#skills" class="hover:underline text-lg">Compétences</a>
+        <a href="index.html#contact" class="hover:underline text-lg">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section Détails du Projet -->
+  <section id="project-details" class="container mx-auto px-6 py-20 flex-grow">
+    <div class="bg-white rounded-lg shadow-lg p-10 max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4 text-gray-800">Configuration du réseau d'une ville sur Cisco Packet Tracer</h2>
+      <p class="text-xl mb-6 text-gray-600">Ce projet vise à configurer l’ensemble du réseau d’une ville tout en apportant des modifications à une partie du réseau existant. Il garantit également la sécurité du réseau en s’appuyant sur un cahier des charges spécifique à chaque zone de la ville.</p>
+      
+      <h3 class="text-2xl font-semibold mb-4 text-gray-700">Fonctionnalités principales :</h3>
+      <ul class="list-disc list-inside mb-6 text-gray-600">
+        <li>SSécurisation d'un réseau</li>
+        <li>Configuration du réseau sur Cisco Packet Tracer</li>
+      </ul>
+
+      <!-- Schéma réseau Image -->
+      <div class="mb-6">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Schéma du réseau du Datacenter</h3>
+        <img src="img-schema-reseau.PNG" alt="Schéma" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
+        <p class="text-lg text-gray-700 mt-2">Voici l’un des schémas que nous avons réalisés, représentant le réseau maillé du Datacenter</p>
+      </div>
+
+      <!-- MLD Image -->
+      <div class="mb-6">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Modèle Logique de Données (MLD)</h3>
+        <img src="img-MLD-bdd.png" alt="MLD" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
+        <p class="text-lg text-gray-700 mt-2">Après avoir schématisé le MCD, il faut faire le MLD qui traduit le MCD en une structure adaptée à la base de données relationnelle, détaillant les tables et leurs relations. Ensuite, il faut implémenter le MLD dans le logiciel MySQL et la BDD est créée. </p>
+      </div>
+
+      <!-- Requête SQL Image -->
+      <div class="mb-6">
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Exemple de Requête SQL</h3>
+        <img src="img-requete-bdd.png" alt="Requête SQL" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
+        <p class="text-lg text-gray-700 mt-2">Pour finir ce projet il suffit de tester la BDD avec des requêtes, voici un exemple de requête SQL utilisée pour obtenir la quantité de gaz relevée dans la région "Ile de France" pour l'année 2020, en groupant par type de gaz.</p>
+      </div>
+
+      <!-- Bouton Retour et Lien GitHub -->
+      <div class="flex space-x-4">
+        <a href="index.html#projects" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Retour aux projets</a>
+        <a href="https://github.com/maelpitois/Projet-Reseau" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet sur GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2024 Maël Pitois. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
