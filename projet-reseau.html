@@ -1,89 +1,128 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-fr="Projet - Réseau Cisco" data-en="Project - Cisco Network">Projet - Réseau Cisco</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <style>
-    .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
-    @keyframes fadeIn { to { opacity: 1; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Projet — Configuration du réseau d'une ville" data-en="Project — City Network Configuration">Projet — Configuration du réseau d'une ville</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] } } }
+        }
+    </script>
+    <style>
+        body { background-color: #090D16; color: #F8FAFC; }
+        .glass-nav { background: rgba(9, 13, 22, 0.8); backdrop-filter: blur(16px); }
+        .bento-card { background: rgba(17, 24, 39, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed fade-in min-h-screen flex flex-col">
+<body class="font-sans antialiased min-h-screen flex flex-col">
 
-  <header class="bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg text-white shadow-xl sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <select id="lang-switcher" class="bg-gray-800 text-white text-sm rounded-full border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none px-3 py-1 cursor-pointer hover:bg-gray-700 transition-colors">
-          <option value="fr">FR</option>
-          <option value="en">EN</option>
-        </select>
-        <h1 class="text-2xl font-extrabold tracking-tight"><a href="index.html">Maël <span class="text-indigo-400">Pitois</span></a></h1>
-      </div>
-      <nav class="space-x-6 hidden md:block font-medium">
-        <a href="index.html#projects" class="hover:text-indigo-400 transition-colors duration-300 flex items-center gap-2"><i class="fas fa-arrow-left"></i> <span data-fr="Retour au portfolio" data-en="Back to portfolio">Retour au portfolio</span></a>
-      </nav>
-    </div>
-  </header>
+    <!-- Navigation -->
+    <header class="glass-nav border-b border-white/10 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-5">
+                <div class="inline-flex items-center bg-slate-900/90 p-1 rounded-xl border border-white/10 font-mono text-xs">
+                    <button onclick="setLanguage('fr')" id="btn-fr" class="px-2.5 py-1.5 rounded-lg font-semibold transition-all">FR</button>
+                    <button onclick="setLanguage('en')" id="btn-en" class="px-2.5 py-1.5 rounded-lg font-semibold transition-all">EN</button>
+                </div>
+                <a href="index.html" class="font-bold text-lg tracking-tight text-white">Maël <span class="text-indigo-400">Pitois</span></a>
+            </div>
+            <a href="index.html#projects" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-medium text-slate-200 transition-all">
+                <i class="fas fa-arrow-left text-xs"></i>
+                <span data-fr="Tous les projets" data-en="All projects">Tous les projets</span>
+            </a>
+        </div>
+    </header>
 
-  <section class="container mx-auto px-4 sm:px-6 py-12 lg:py-20 flex-grow">
-    <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 max-w-5xl mx-auto border-t-8 border-indigo-500 relative">
-      <h2 class="text-4xl lg:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight" data-fr="Configuration du réseau d'une ville" data-en="City Network Configuration">Configuration du réseau d'une ville</h2>
-      <p class="text-xl mb-10 text-gray-600 leading-relaxed" data-fr="Dans ce projet, j'ai pris le rôle de chef de projet au sein d'une équipe de 4 personnes. J’ai configuré l’ensemble du réseau d’une ville tout en apportant des modifications à une partie du réseau existant. J’ai également veillé à la sécurisation du réseau en respectant un cahier des charges propre à chaque zone." data-en="In this project, I took the role of project manager in a team of 4. I configured the entire network of a city while modifying part of the existing network. I also ensured network security based on specific requirements for each zone.">Dans ce projet, j'ai pris le rôle de chef de projet au sein d'une équipe de 4 personnes...</p>
-      
-      <div class="bg-indigo-50 rounded-2xl p-6 mb-10 border border-indigo-100">
-        <h3 class="text-2xl font-bold mb-4 text-indigo-800 flex items-center gap-2"><i class="fas fa-shield-alt"></i> <span data-fr="Missions Clés :" data-en="Key Missions:">Missions Clés :</span></h3>
-        <ul class="list-none space-y-3 text-gray-700">
-          <li class="flex items-center gap-3"><i class="fas fa-network-wired text-indigo-500"></i> <span data-fr="Configuration complète sur Cisco Packet Tracer" data-en="Full configuration on Cisco Packet Tracer">Configuration complète sur Cisco Packet Tracer</span></li>
-          <li class="flex items-center gap-3"><i class="fas fa-lock text-indigo-500"></i> <span data-fr="Sécurisation des différentes zones du réseau" data-en="Securing various network zones">Sécurisation des différentes zones du réseau</span></li>
-        </ul>
-      </div>
-
-      <div class="space-y-16">
-        <div class="group">
-          <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Schéma du réseau du Datacenter" data-en="Datacenter network diagram">Schéma du réseau du Datacenter</h3>
-          <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
-            <img src="img-schema-reseau.PNG" alt="Schéma" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
-          </div>
+    <!-- Contenu Principal -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow">
+        
+        <div class="mb-12">
+            <div class="flex flex-wrap gap-2 font-mono text-xs text-indigo-400 mb-4">
+                <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">Cisco Packet Tracer</span>
+                <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">NAT / Routing</span>
+                <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20" data-fr="Chef de projet (Équipe de 4)" data-en="Project Lead (Team of 4)">Chef de projet (Équipe de 4)</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white mb-6" data-fr="Configuration du réseau d'une ville sur Cisco Packet Tracer" data-en="City Network Configuration on Cisco Packet Tracer">Configuration du réseau d'une ville sur Cisco Packet Tracer</h1>
+            <p class="text-slate-400 text-lg leading-relaxed max-w-3xl" data-fr="Dans ce projet, j'ai assuré le rôle de chef de projet au sein d'une équipe de 4 personnes. J’ai configuré l’ensemble du réseau d’une ville tout en faisant évoluer une partie de l'infrastructure existante et en garantissant la sécurisation de chaque zone selon le cahier des charges." data-en="In this project, I served as project manager leading a 4-person team. I configured an entire city network while upgrading parts of the existing infrastructure and securing each zone according to strict specifications.">
+                Dans ce projet, j'ai assuré le rôle de chef de projet au sein d'une équipe de 4 personnes. J’ai configuré l’ensemble du réseau d’une ville tout en faisant évoluer une partie de l'infrastructure existante et en garantissant la sécurisation de chaque zone selon le cahier des charges.
+            </p>
         </div>
 
-        <div class="group">
-          <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Configuration Réseau (NAT)" data-en="Network Configuration (NAT)">Configuration Réseau (NAT)</h3>
-          <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
-            <img src="img-config-reseau.PNG" alt="Configuration" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
-          </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-14">
+            <div class="lg:col-span-2 bento-card rounded-2xl p-6 sm:p-8">
+                <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-shield-halved text-indigo-400"></i>
+                    <span data-fr="Réalisations & Soutenance" data-en="Deliverables & Defense">Réalisations & Soutenance</span>
+                </h2>
+                <ul class="space-y-3 text-sm text-slate-300 mb-6">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> <span data-fr="Conception du réseau maillé du Datacenter et configuration sur Cisco Packet Tracer." data-en="Mesh network design for the Datacenter and configuration on Cisco Packet Tracer.">Conception du réseau maillé du Datacenter et configuration sur Cisco Packet Tracer.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> <span data-fr="Sécurisation du réseau et mise en place de règles NAT par zone." data-en="Network security implementation and zone-based NAT rules.">Sécurisation du réseau et mise en place de règles NAT par zone.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> <span data-fr="Présentation orale devant un jury : justification des choix techniques et démonstration des résultats." data-en="Oral defense before a jury: justification of technical choices and live demonstration of results.">Présentation orale devant un jury : justification des choix techniques et démonstration des résultats.</span></li>
+                </ul>
+            </div>
+
+            <div class="bento-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                    <p class="font-mono text-xs text-slate-400 mb-2" data-fr="// DÉPÔT DU PROJET" data-en="// PROJECT REPOSITORY">// DÉPÔT DU PROJET</p>
+                    <h3 class="text-xl font-bold text-white mb-2">Topologie & Configs</h3>
+                    <p class="text-slate-400 text-sm mb-6" data-fr="Retrouvez les fichiers Packet Tracer et la documentation sur GitHub." data-en="Find the Packet Tracer files and documentation on GitHub.">Retrouvez les fichiers Packet Tracer et la documentation sur GitHub.</p>
+                </div>
+                <a href="https://github.com/maelpitois/Projet-Reseau" target="_blank" class="w-full py-3.5 px-5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                    <i class="fab fa-github text-lg"></i>
+                    <span data-fr="Voir sur GitHub" data-en="View on GitHub">Voir sur GitHub</span>
+                </a>
+            </div>
         </div>
-      </div>
 
-      <div class="flex flex-col sm:flex-row gap-4 mt-16 pt-8 border-t border-gray-100">
-        <a href="index.html#projects" class="text-center bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full hover:bg-gray-300 transition-colors duration-300" data-fr="Retour aux projets" data-en="Back to projects"><i class="fas fa-arrow-left mr-2"></i> Retour</a>
-        <a href="https://github.com/maelpitois/Projet-Reseau" target="_blank" class="text-center bg-gray-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-2xl hover:bg-black transform hover:-translate-y-1 transition-all duration-300" data-fr="Voir sur GitHub" data-en="View on GitHub"><i class="fab fa-github mr-2"></i> Voir sur GitHub</a>
-      </div>
-    </div>
-  </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bento-card rounded-3xl p-6 flex flex-col justify-between">
+                <div>
+                    <span class="font-mono text-xs text-indigo-400">TOPOLOGIE</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-2" data-fr="Schéma du réseau du Datacenter" data-en="Datacenter Network Diagram">Schéma du réseau du Datacenter</h3>
+                    <p class="text-slate-400 text-sm mb-4" data-fr="Schéma représentant l'architecture du réseau maillé du Datacenter." data-en="Diagram representing the meshed network architecture of the Datacenter.">Schéma représentant l'architecture du réseau maillé du Datacenter.</p>
+                </div>
+                <div class="bg-slate-950 p-3 rounded-2xl border border-white/10">
+                    <img src="img-schema-reseau.PNG" alt="Schéma réseau" class="w-full h-72 object-contain mx-auto rounded-lg">
+                </div>
+            </div>
 
-  <footer class="bg-gray-900 text-gray-400 py-6 mt-auto">
-    <div class="container mx-auto px-6 text-center">
-      <p data-fr="&copy; 2025 Maël Pitois. Tous droits réservés." data-en="&copy; 2025 Maël Pitois. All rights reserved.">&copy; 2025 Maël Pitois. Tous droits réservés.</p>
-    </div>
-  </footer>
+            <div class="bento-card rounded-3xl p-6 flex flex-col justify-between">
+                <div>
+                    <span class="font-mono text-xs text-indigo-400">CLI / ROUTING</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-2" data-fr="Configuration Réseau (NAT)" data-en="Network Configuration (NAT)">Configuration Réseau (NAT)</h3>
+                    <p class="text-slate-400 text-sm mb-4" data-fr="Extrait des configurations NAT mises en place pour une section du réseau de la ville." data-en="Excerpt of the NAT configurations deployed for a section of the city network.">Extrait des configurations NAT mises en place pour une section du réseau de la ville.</p>
+                </div>
+                <div class="bg-slate-950 p-3 rounded-2xl border border-white/10">
+                    <img src="img-config-reseau.PNG" alt="Configuration NAT" class="w-full h-72 object-contain mx-auto rounded-lg">
+                </div>
+            </div>
+        </div>
 
-  <script>
-    function setLanguage(lang) {
-      localStorage.setItem('portfolio_lang', lang);
-      document.documentElement.lang = lang;
-      const switcher = document.getElementById('lang-switcher');
-      if(switcher) switcher.value = lang;
-      document.querySelectorAll('[data-en]').forEach(el => {
-        if(el.hasAttribute(`data-${lang}`)) el.innerHTML = el.getAttribute(`data-${lang}`);
-      });
-    }
-    const savedLang = localStorage.getItem('portfolio_lang') || 'fr';
-    setLanguage(savedLang);
-    const langSwitcher = document.getElementById('lang-switcher');
-    if(langSwitcher) langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
-  </script>
+    </main>
+
+    <footer class="border-t border-white/10 py-8 text-center text-xs font-mono text-slate-500">
+        <p data-fr="© 2026 Maël Pitois — Tous droits réservés." data-en="© 2026 Maël Pitois — All rights reserved.">© 2026 Maël Pitois — Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            localStorage.setItem('portfolio_lang', lang);
+            document.documentElement.lang = lang;
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.className = lang === 'fr' ? 'px-2.5 py-1.5 rounded-lg font-semibold bg-indigo-600 text-white shadow transition-all' : 'px-2.5 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition-all';
+                btnEn.className = lang === 'en' ? 'px-2.5 py-1.5 rounded-lg font-semibold bg-indigo-600 text-white shadow transition-all' : 'px-2.5 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition-all';
+            }
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if (el.hasAttribute(`data-${lang}`)) el.innerHTML = el.getAttribute(`data-${lang}`);
+            });
+        }
+        setLanguage(localStorage.getItem('portfolio_lang') || 'fr');
+    </script>
 </body>
 </html>
