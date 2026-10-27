@@ -1,102 +1,87 @@
 <!DOCTYPE html> 
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-fr="Projet - Simulateur de Modulation ASK et FSK" data-en="Project - ASK and FSK Modulation Simulator">Projet - Simulateur de Modulation ASK et FSK</title>
+  <title data-fr="Projet - Modulation ASK/FSK" data-en="Project - ASK/FSK Modulation">Projet - Modulation ASK/FSK</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    .hover-grow:hover {
-      transform: scale(1.05);
-    }
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.2s forwards;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-    .border-black {
-      border: 1px solid black;
-    }
+    .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans leading-normal fade-in min-h-screen flex flex-col">
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed fade-in min-h-screen flex flex-col selection:bg-indigo-200">
 
-  <!-- Section Navigation -->
-  <header class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+  <header class="bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg text-white shadow-xl sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-4">
-        <select id="lang-switcher" class="bg-gray-700 text-white text-sm rounded border border-gray-600 focus:outline-none p-1 cursor-pointer">
+        <select id="lang-switcher" class="bg-gray-800 text-white text-sm rounded-full border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none px-3 py-1 cursor-pointer hover:bg-gray-700 transition-colors">
           <option value="fr">FR</option>
           <option value="en">EN</option>
         </select>
-        <h1 class="text-3xl font-extrabold">Maël Pitois</h1>
+        <h1 class="text-2xl font-extrabold tracking-tight"><a href="index.html">Maël <span class="text-indigo-400">Pitois</span></a></h1>
       </div>
-      <nav class="space-x-4 hidden md:block">
-        <a href="index.html#about" class="hover:underline text-lg" data-fr="À propos" data-en="About">À propos</a>
-        <a href="index.html#projects" class="hover:underline text-lg" data-fr="Projets" data-en="Projects">Projets</a>
-        <a href="index.html#skills" class="hover:underline text-lg" data-fr="Compétences" data-en="Skills">Compétences</a>
-        <a href="index.html#contact" class="hover:underline text-lg" data-fr="Contact" data-en="Contact">Contact</a>
+      <nav class="space-x-6 hidden md:block font-medium">
+        <a href="index.html#projects" class="hover:text-indigo-400 transition-colors duration-300 flex items-center gap-2"><i class="fas fa-arrow-left"></i> <span data-fr="Retour au portfolio" data-en="Back to portfolio">Retour au portfolio</span></a>
       </nav>
     </div>
   </header>
 
-  <!-- Section Détails du Projet -->
-  <section id="project-details" class="container mx-auto px-6 py-20 flex-grow overlay">
-    <div class="bg-white rounded-lg shadow-lg p-10 max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-4 text-gray-800" data-fr="Simulateur de Modulation ASK et FSK en Python" data-en="ASK and FSK Modulation Simulator in Python">Simulateur de Modulation ASK et FSK en Python</h2>
-      <p class="text-xl mb-6 text-gray-600" data-fr="Ce projet consiste à développer un simulateur qui illustre le processus de modulation d'amplitude (ASK) et de fréquence (FSK) en Python. L'objectif est de montrer comment un message peut être encodé, modulé et transmis via une chaîne de transmission numérique avant d'être reçu et décodé." data-en="This project involves developing a simulator that illustrates the amplitude (ASK) and frequency (FSK) modulation process in Python. The objective is to show how a message can be encoded, modulated, and transmitted via a digital transmission chain before being received and decoded.">Ce projet consiste à développer un simulateur qui illustre le processus de modulation d'amplitude (ASK) et de fréquence (FSK) en Python. L'objectif est de montrer comment un message peut être encodé, modulé et transmis via une chaîne de transmission numérique avant d'être reçu et décodé.</p>
+  <section class="container mx-auto px-4 sm:px-6 py-12 lg:py-20 flex-grow">
+    <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 max-w-5xl mx-auto border-t-8 border-blue-500 relative overflow-hidden">
+      <h2 class="text-4xl lg:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight" data-fr="Simulateur de Modulation ASK et FSK" data-en="ASK and FSK Modulation Simulator">Simulateur de Modulation ASK et FSK</h2>
+      <p class="text-xl mb-10 text-gray-600 leading-relaxed" data-fr="Ce projet consiste à développer un simulateur qui illustre le processus de modulation d'amplitude (ASK) et de fréquence (FSK) en Python. L'objectif est de montrer comment un message peut être encodé, modulé et transmis." data-en="This project involves developing a simulator that illustrates the amplitude (ASK) and frequency (FSK) modulation process in Python. The objective is to show how a message can be encoded, modulated, and transmitted.">Ce projet consiste à développer un simulateur qui illustre le processus de modulation d'amplitude (ASK) et de fréquence (FSK) en Python.</p>
 
-      <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Fonctionnalités principales :" data-en="Main features:">Fonctionnalités principales :</h3>
-      <ul class="list-disc list-inside mb-6 text-gray-600">
-        <li data-fr="Encodage : Conversion d'un fichier texte en code ASCII, puis en signal binaire." data-en="Encoding: Conversion of a text file into ASCII code, then into a binary signal.">Encodage : Conversion d'un fichier texte en code ASCII, puis en signal binaire.</li>
-        <li data-fr="Modulation : Application des modulations ASK et FSK sur le signal binaire." data-en="Modulation: Application of ASK and FSK modulations to the binary signal.">Modulation : Application des modulations ASK et FSK sur le signal binaire.</li>
-        <li data-fr="Transmission : Simulation d'une transmission via un canal de communication." data-en="Transmission: Simulation of a transmission via a communication channel.">Transmission : Simulation d'une transmission via un canal de communication.</li>
-        <li data-fr="Réception : Démodulation et décodage du signal reçu pour reconstituer le message original." data-en="Reception: Demodulation and decoding of the received signal to reconstruct the original message.">Réception : Démodulation et décodage du signal reçu pour reconstituer le message original.</li>
-        <li data-fr="Comparaison des performances entre les modulations ASK et FSK." data-en="Performance comparison between ASK and FSK modulations.">Comparaison des performances entre les modulations ASK et FSK.</li>
-      </ul>
-
-      <!-- Image Chaîne de Transmission -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Chaîne de transmission" data-en="Transmission chain">Chaîne de transmission</h3>
-        <img src="img-chaine-transmission-modulation.png" alt="Chaîne de transmission" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="Cette image illustre le processus de transmission d'un message, depuis l'encodage jusqu'à la réception, en passant par la modulation et la transmission via un canal simulé." data-en="This image illustrates the message transmission process, from encoding to reception, including modulation and transmission via a simulated channel.">Cette image illustre le processus de transmission d'un message, depuis l'encodage jusqu'à la réception, en passant par la modulation et la transmission via un canal simulé.</p>
+      <div class="bg-blue-50 rounded-2xl p-6 mb-10 border border-blue-100">
+        <h3 class="text-2xl font-bold mb-4 text-blue-800 flex items-center gap-2"><i class="fas fa-cogs"></i> <span data-fr="Fonctionnalités principales :" data-en="Main features:">Fonctionnalités principales :</span></h3>
+        <ul class="list-none space-y-3 text-gray-700">
+          <li class="flex items-start gap-3"><i class="fas fa-code text-blue-500 mt-1"></i> <span data-fr="Encodage : Fichier texte -> ASCII -> signal binaire." data-en="Encoding: Text file -> ASCII -> binary signal.">Encodage : Fichier texte -> ASCII -> signal binaire.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-wave-square text-blue-500 mt-1"></i> <span data-fr="Modulation : Application ASK et FSK." data-en="Modulation: Application of ASK and FSK.">Modulation : Application ASK et FSK.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-broadcast-tower text-blue-500 mt-1"></i> <span data-fr="Transmission : Simulation via un canal de communication." data-en="Transmission: Simulation via a communication channel.">Transmission : Simulation via un canal de communication.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-satellite-dish text-blue-500 mt-1"></i> <span data-fr="Réception : Démodulation et décodage du signal reçu." data-en="Reception: Demodulation and decoding of the received signal.">Réception : Démodulation et décodage du signal reçu.</span></li>
+        </ul>
       </div>
 
-      <!-- Image Destinataire -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Destinataire et Démodulation" data-en="Recipient and Demodulation">Destinataire et Démodulation</h3>
-        <img src="img-destinataire-modulation.png" alt="Destinataire et Démodulation" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="L'étape de réception consiste à démoduler le signal pour extraire le message d'origine. Dans cette partie du code, nous devons choisir l'expéditeur du message ainsi que son destinataire." data-en="The reception step consists of demodulating the signal to extract the original message. In this part of the code, we must choose the sender of the message as well as its recipient.">L'étape de réception consiste à démoduler le signal pour extraire le message d'origine. Dans cette partie du code, nous devons choisir l'expéditeur du message ainsi que son destinataire.</p>
+      <div class="space-y-16">
+        <div class="group">
+          <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Chaîne de transmission" data-en="Transmission chain">Chaîne de transmission</h3>
+          <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+            <img src="img-chaine-transmission-modulation.png" alt="Chaîne" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="group">
+            <h3 class="text-xl font-bold mb-4 text-gray-900" data-fr="Destinataire & Démodulation" data-en="Recipient & Demodulation">Destinataire & Démodulation</h3>
+            <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+              <img src="img-destinataire-modulation.png" alt="Démodulation" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+            </div>
+          </div>
+          <div class="group">
+            <h3 class="text-xl font-bold mb-4 text-gray-900" data-fr="Choix de la modulation" data-en="Modulation choice">Choix de la modulation</h3>
+            <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+              <img src="img-choix-modulation.png" alt="Choix" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+
+        <div class="group">
+          <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Résultat de la modulation" data-en="Modulation result">Résultat de la modulation</h3>
+          <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+            <img src="img-resultat-modulation.png" alt="Résultat" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+          </div>
+        </div>
       </div>
 
-      <!-- Image Choix de Modulation -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Choix de la modulation (ASK ou FSK)" data-en="Modulation choice (ASK or FSK)">Choix de la modulation (ASK ou FSK)</h3>
-        <img src="img-choix-modulation.png" alt="Choix de modulation" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="Le simulateur permet de choisir entre deux techniques de modulation : ASK (Amplitude Shift Keying) ou FSK (Frequency Shift Keying). Chaque méthode a ses avantages en fonction du bruit et des conditions du canal." data-en="The simulator allows you to choose between two modulation techniques: ASK (Amplitude Shift Keying) or FSK (Frequency Shift Keying). Each method has its advantages depending on noise and channel conditions.">Le simulateur permet de choisir entre deux techniques de modulation : ASK (Amplitude Shift Keying) ou FSK (Frequency Shift Keying). Chaque méthode a ses avantages en fonction du bruit et des conditions du canal.</p>
-      </div>
-
-      <!-- Image Résultat de Modulation -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Résultat de la modulation" data-en="Modulation result">Résultat de la modulation</h3>
-        <img src="img-resultat-modulation.png" alt="Résultat de modulation" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="Cette image présente les résultats obtenus après la modulation, transmission et réception d'un message." data-en="This image presents the results obtained after the modulation, transmission, and reception of a message.">Cette image présente les résultats obtenus après la modulation, transmission et réception d'un message.</p>
-      </div>
-
-      <!-- Boutons Retour et Lien GitHub -->
-      <div class="flex space-x-4 mt-8">
-        <a href="index.html#projects" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Retour aux projets" data-en="Back to projects">Retour aux projets</a>
-        <a href="https://github.com/maelpitois/Projet_Modulation" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Voir le projet sur GitHub" data-en="View project on GitHub">Voir le projet sur GitHub</a>
+      <div class="flex flex-col sm:flex-row gap-4 mt-16 pt-8 border-t border-gray-100">
+        <a href="index.html#projects" class="text-center bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full hover:bg-gray-300 transition-colors duration-300" data-fr="Retour aux projets" data-en="Back to projects"><i class="fas fa-arrow-left mr-2"></i> Retour</a>
+        <a href="https://github.com/maelpitois/Projet_Modulation" target="_blank" class="text-center bg-gray-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-2xl hover:bg-black transform hover:-translate-y-1 transition-all duration-300" data-fr="Voir sur GitHub" data-en="View on GitHub"><i class="fab fa-github mr-2"></i> Voir sur GitHub</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
+  <footer class="bg-gray-900 text-gray-400 py-6 mt-auto">
     <div class="container mx-auto px-6 text-center">
       <p data-fr="&copy; 2024 Maël Pitois. Tous droits réservés." data-en="&copy; 2024 Maël Pitois. All rights reserved.">&copy; 2024 Maël Pitois. Tous droits réservés.</p>
     </div>
@@ -108,21 +93,14 @@
       document.documentElement.lang = lang;
       const switcher = document.getElementById('lang-switcher');
       if(switcher) switcher.value = lang;
-      
       document.querySelectorAll('[data-en]').forEach(el => {
-        if(el.hasAttribute(`data-${lang}`)) {
-          el.innerHTML = el.getAttribute(`data-${lang}`);
-        }
+        if(el.hasAttribute(`data-${lang}`)) el.innerHTML = el.getAttribute(`data-${lang}`);
       });
     }
-
     const savedLang = localStorage.getItem('portfolio_lang') || 'fr';
     setLanguage(savedLang);
-
     const langSwitcher = document.getElementById('lang-switcher');
-    if(langSwitcher) {
-      langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
-    }
+    if(langSwitcher) langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
   </script>
 </body>
 </html>
