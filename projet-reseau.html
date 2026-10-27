@@ -1,102 +1,70 @@
 <!DOCTYPE html>  
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-fr="Projet - Configuration du réseau d'une ville sur Cisco Packet Tracer" data-en="Project - Configuration of a city network on Cisco Packet Tracer">Projet - Configuration du réseau d'une ville sur Cisco Packet Tracer</title>
+  <title data-fr="Projet - Réseau Cisco" data-en="Project - Cisco Network">Projet - Réseau Cisco</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    .hover-grow:hover {
-      transform: scale(1.05);
-    }
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.2s forwards;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-    .border-black {
-      border: 1px solid black;
-    }
+    .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans leading-normal fade-in min-h-screen flex flex-col">
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed fade-in min-h-screen flex flex-col">
 
-  <!-- Section Navigation -->
-  <header class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+  <header class="bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg text-white shadow-xl sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-4">
-        <select id="lang-switcher" class="bg-gray-700 text-white text-sm rounded border border-gray-600 focus:outline-none p-1 cursor-pointer">
+        <select id="lang-switcher" class="bg-gray-800 text-white text-sm rounded-full border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none px-3 py-1 cursor-pointer hover:bg-gray-700 transition-colors">
           <option value="fr">FR</option>
           <option value="en">EN</option>
         </select>
-        <h1 class="text-3xl font-extrabold">Maël Pitois</h1>
+        <h1 class="text-2xl font-extrabold tracking-tight"><a href="index.html">Maël <span class="text-indigo-400">Pitois</span></a></h1>
       </div>
-      <nav class="space-x-4 hidden md:block">
-        <a href="index.html#about" class="hover:underline text-lg" data-fr="À propos" data-en="About">À propos</a>
-        <a href="index.html#projects" class="hover:underline text-lg" data-fr="Projets" data-en="Projects">Projets</a>
-        <a href="index.html#skills" class="hover:underline text-lg" data-fr="Compétences" data-en="Skills">Compétences</a>
-        <a href="index.html#contact" class="hover:underline text-lg" data-fr="Contact" data-en="Contact">Contact</a>
+      <nav class="space-x-6 hidden md:block font-medium">
+        <a href="index.html#projects" class="hover:text-indigo-400 transition-colors duration-300 flex items-center gap-2"><i class="fas fa-arrow-left"></i> <span data-fr="Retour au portfolio" data-en="Back to portfolio">Retour au portfolio</span></a>
       </nav>
     </div>
   </header>
 
-  <!-- Section Détails du Projet -->
-  <section id="project-details" class="container mx-auto px-6 py-20 flex-grow">
-    <div class="bg-white rounded-lg shadow-lg p-10 max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-4 text-gray-800" data-fr="Configuration du réseau d'une ville sur Cisco Packet Tracer" data-en="Configuration of a city network on Cisco Packet Tracer">Configuration du réseau d'une ville sur Cisco Packet Tracer</h2>
-      <p class="text-xl mb-6 text-gray-600" data-fr="Dans ce projet, j'ai pris le rôle de chef de projet au sein d'une équipe de 4 personnes. J’ai configuré l’ensemble du réseau d’une ville tout en apportant des modifications à une partie du réseau existant. J’ai également veillé à la sécurisation du réseau en respectant un cahier des charges propre à chaque zone de la ville." data-en="In this project, I took the role of project manager in a team of 4 people. I configured the entire network of a city while making modifications to a part of the existing network. I also ensured the security of the network while respecting specifications specific to each area of the city.">
-        Dans ce projet, j'ai pris le rôle de chef de projet au sein d'une équipe de 4 personnes. 
-        J’ai configuré l’ensemble du réseau d’une ville tout en apportant des modifications à une partie du réseau existant. 
-        J’ai également veillé à la sécurisation du réseau en respectant un cahier des charges propre à chaque zone de la ville.
-      </p>
+  <section class="container mx-auto px-4 sm:px-6 py-12 lg:py-20 flex-grow">
+    <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 max-w-5xl mx-auto border-t-8 border-indigo-500 relative">
+      <h2 class="text-4xl lg:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight" data-fr="Configuration du réseau d'une ville" data-en="City Network Configuration">Configuration du réseau d'une ville</h2>
+      <p class="text-xl mb-10 text-gray-600 leading-relaxed" data-fr="Dans ce projet, j'ai pris le rôle de chef de projet au sein d'une équipe de 4 personnes. J’ai configuré l’ensemble du réseau d’une ville tout en apportant des modifications à une partie du réseau existant. J’ai également veillé à la sécurisation du réseau en respectant un cahier des charges propre à chaque zone." data-en="In this project, I took the role of project manager in a team of 4. I configured the entire network of a city while modifying part of the existing network. I also ensured network security based on specific requirements for each zone.">Dans ce projet, j'ai pris le rôle de chef de projet au sein d'une équipe de 4 personnes...</p>
       
-      <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Fonctionnalités principales :" data-en="Main features:">Fonctionnalités principales :</h3>
-      <ul class="list-disc list-inside mb-6 text-gray-600">
-        <li data-fr="Sécurisation d'un réseau" data-en="Network security">Sécurisation d'un réseau</li>
-        <li data-fr="Configuration du réseau sur Cisco Packet Tracer" data-en="Network configuration on Cisco Packet Tracer">Configuration du réseau sur Cisco Packet Tracer</li>
-      </ul>
-
-      <!-- Schéma réseau Image -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Schéma du réseau du Datacenter" data-en="Datacenter network diagram">Schéma du réseau du Datacenter</h3>
-        <img src="img-schema-reseau.PNG" alt="Schéma" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="Voici l’un des schémas que j’ai réalisés, représentant le réseau maillé du Datacenter." data-en="Here is one of the diagrams I created, representing the mesh network of the Datacenter.">
-          Voici l’un des schémas que j’ai réalisés, représentant le réseau maillé du Datacenter.
-        </p>
+      <div class="bg-indigo-50 rounded-2xl p-6 mb-10 border border-indigo-100">
+        <h3 class="text-2xl font-bold mb-4 text-indigo-800 flex items-center gap-2"><i class="fas fa-shield-alt"></i> <span data-fr="Missions Clés :" data-en="Key Missions:">Missions Clés :</span></h3>
+        <ul class="list-none space-y-3 text-gray-700">
+          <li class="flex items-center gap-3"><i class="fas fa-network-wired text-indigo-500"></i> <span data-fr="Configuration complète sur Cisco Packet Tracer" data-en="Full configuration on Cisco Packet Tracer">Configuration complète sur Cisco Packet Tracer</span></li>
+          <li class="flex items-center gap-3"><i class="fas fa-lock text-indigo-500"></i> <span data-fr="Sécurisation des différentes zones du réseau" data-en="Securing various network zones">Sécurisation des différentes zones du réseau</span></li>
+        </ul>
       </div>
 
-      <!-- Config Réseau-->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Configuration Réseau" data-en="Network Configuration">Configuration Réseau</h3>
-        <img src="img-config-reseau.PNG" alt="Configuration" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="Voici l'une des configurations NAT que j’ai mises en place pour une section du réseau de la ville." data-en="Here is one of the NAT configurations I set up for a section of the city network.">
-          Voici l'une des configurations NAT que j’ai mises en place pour une section du réseau de la ville.
-        </p>
+      <div class="space-y-16">
+        <div class="group">
+          <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Schéma du réseau du Datacenter" data-en="Datacenter network diagram">Schéma du réseau du Datacenter</h3>
+          <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+            <img src="img-schema-reseau.PNG" alt="Schéma" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+          </div>
+        </div>
+
+        <div class="group">
+          <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Configuration Réseau (NAT)" data-en="Network Configuration (NAT)">Configuration Réseau (NAT)</h3>
+          <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+            <img src="img-config-reseau.PNG" alt="Configuration" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+          </div>
+        </div>
       </div>
 
-      <!-- Présentation orale -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Présentation orale" data-en="Oral presentation">Présentation orale</h3>
-        <p class="text-lg text-gray-700" data-fr="Ce projet s’est conclu par une présentation orale devant un jury, au cours de laquelle j’ai exposé la démarche, les choix techniques ainsi que les résultats obtenus. Cet exercice m’a permis de développer mes compétences de communication, ma capacité à structurer un discours technique, et à répondre avec clarté aux questions posées." data-en="This project concluded with an oral presentation to a jury, during which I explained the approach, the technical choices, and the results obtained. This exercise allowed me to develop my communication skills, my ability to structure a technical speech, and to answer questions clearly.">
-          Ce projet s’est conclu par une présentation orale devant un jury, au cours de laquelle j’ai exposé la démarche, les choix techniques ainsi que les résultats obtenus. 
-          Cet exercice m’a permis de développer mes compétences de communication, ma capacité à structurer un discours technique, et à répondre avec clarté aux questions posées.
-        </p>
-      </div>
-
-      <!-- Bouton Retour et Lien GitHub -->
-      <div class="flex space-x-4 mt-8">
-        <a href="index.html#projects" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Retour aux projets" data-en="Back to projects">Retour aux projets</a>
-        <a href="https://github.com/maelpitois/Projet-Reseau" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Voir le projet sur GitHub" data-en="View project on GitHub">Voir le projet sur GitHub</a>
+      <div class="flex flex-col sm:flex-row gap-4 mt-16 pt-8 border-t border-gray-100">
+        <a href="index.html#projects" class="text-center bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full hover:bg-gray-300 transition-colors duration-300" data-fr="Retour aux projets" data-en="Back to projects"><i class="fas fa-arrow-left mr-2"></i> Retour</a>
+        <a href="https://github.com/maelpitois/Projet-Reseau" target="_blank" class="text-center bg-gray-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-2xl hover:bg-black transform hover:-translate-y-1 transition-all duration-300" data-fr="Voir sur GitHub" data-en="View on GitHub"><i class="fab fa-github mr-2"></i> Voir sur GitHub</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
+  <footer class="bg-gray-900 text-gray-400 py-6 mt-auto">
     <div class="container mx-auto px-6 text-center">
       <p data-fr="&copy; 2025 Maël Pitois. Tous droits réservés." data-en="&copy; 2025 Maël Pitois. All rights reserved.">&copy; 2025 Maël Pitois. Tous droits réservés.</p>
     </div>
@@ -108,21 +76,14 @@
       document.documentElement.lang = lang;
       const switcher = document.getElementById('lang-switcher');
       if(switcher) switcher.value = lang;
-      
       document.querySelectorAll('[data-en]').forEach(el => {
-        if(el.hasAttribute(`data-${lang}`)) {
-          el.innerHTML = el.getAttribute(`data-${lang}`);
-        }
+        if(el.hasAttribute(`data-${lang}`)) el.innerHTML = el.getAttribute(`data-${lang}`);
       });
     }
-
     const savedLang = localStorage.getItem('portfolio_lang') || 'fr';
     setLanguage(savedLang);
-
     const langSwitcher = document.getElementById('lang-switcher');
-    if(langSwitcher) {
-      langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
-    }
+    if(langSwitcher) langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
   </script>
 </body>
 </html>
