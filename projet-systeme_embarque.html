@@ -1,101 +1,90 @@
 <!DOCTYPE html>  
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-fr="Projet - Création d'une station météo embarquée" data-en="Project - Creation of an embedded weather station">Projet - Création d'une station météo embarquée</title>
+  <title data-fr="Projet - Station météo" data-en="Project - Weather station">Projet - Station météo</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    .hover-grow:hover {
-      transform: scale(1.05);
-    }
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.2s forwards;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-    .border-black {
-      border: 1px solid black;
-    }
+    .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans leading-normal fade-in min-h-screen flex flex-col">
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed fade-in min-h-screen flex flex-col">
 
-  <!-- Section Navigation -->
-  <header class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+  <header class="bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg text-white shadow-xl sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-4">
-        <select id="lang-switcher" class="bg-gray-700 text-white text-sm rounded border border-gray-600 focus:outline-none p-1 cursor-pointer">
+        <select id="lang-switcher" class="bg-gray-800 text-white text-sm rounded-full border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none px-3 py-1 cursor-pointer hover:bg-gray-700 transition-colors">
           <option value="fr">FR</option>
           <option value="en">EN</option>
         </select>
-        <h1 class="text-3xl font-extrabold">Maël Pitois</h1>
+        <h1 class="text-2xl font-extrabold tracking-tight"><a href="index.html">Maël <span class="text-indigo-400">Pitois</span></a></h1>
       </div>
-      <nav class="space-x-4 hidden md:block">
-        <a href="index.html#about" class="hover:underline text-lg" data-fr="À propos" data-en="About">À propos</a>
-        <a href="index.html#projects" class="hover:underline text-lg" data-fr="Projets" data-en="Projects">Projets</a>
-        <a href="index.html#skills" class="hover:underline text-lg" data-fr="Compétences" data-en="Skills">Compétences</a>
-        <a href="index.html#contact" class="hover:underline text-lg" data-fr="Contact" data-en="Contact">Contact</a>
+      <nav class="space-x-6 hidden md:block font-medium">
+        <a href="index.html#projects" class="hover:text-indigo-400 transition-colors duration-300 flex items-center gap-2"><i class="fas fa-arrow-left"></i> <span data-fr="Retour au portfolio" data-en="Back to portfolio">Retour au portfolio</span></a>
       </nav>
     </div>
   </header>
 
-  <!-- Section Détails du Projet -->
-  <section id="project-details" class="container mx-auto px-6 py-20 flex-grow">
-    <div class="bg-white rounded-lg shadow-lg p-10 max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-4 text-gray-800" data-fr="Création d'une station météo embarquée" data-en="Creation of an embedded weather station">Création d'une station météo embarquée</h2>
-      <p class="text-xl mb-6 text-gray-600" data-fr="Ce projet consiste à créer une analyse système, une architecture de programme, une démonstration fonctionnelle, une documentation technique et utilisateur." data-en="This project involves creating a system analysis, program architecture, functional demonstration, technical and user documentation.">Ce projet consiste à créer une analyse système, une architecture de programme, une démonstration fonctionnelle, une documentation technique et utilisateur.</p>
+  <section class="container mx-auto px-4 sm:px-6 py-12 lg:py-20 flex-grow">
+    <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 max-w-5xl mx-auto border-t-8 border-teal-500 relative">
+      <h2 class="text-4xl lg:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight" data-fr="Création d'une station météo embarquée" data-en="Creation of an embedded weather station">Création d'une station météo embarquée</h2>
+      <p class="text-xl mb-10 text-gray-600 leading-relaxed" data-fr="Ce projet consiste à créer une analyse système, une architecture de programme, une démonstration fonctionnelle, une documentation technique et utilisateur autour d'une station météo Arduino." data-en="This project involves creating a system analysis, program architecture, functional demonstration, and technical documentation around an Arduino weather station.">Ce projet consiste à créer une analyse système, une architecture de programme, une démonstration fonctionnelle, une documentation technique et utilisateur.</p>
       
-      <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Fonctionnalités principales :" data-en="Main features:">Fonctionnalités principales :</h3>
-      <ul class="list-disc list-inside mb-6 text-gray-600">
-        <li data-fr="Mesure des paramètres environnementaux." data-en="Measurement of environmental parameters.">Mesure des paramètres environnementaux.</li>
-        <li data-fr="Stockage des données." data-en="Data storage.">Stockage des données.</li>
-        <li data-fr="Indication d'état avec LED." data-en="Status indication with LED.">Indication d'état avec LED.</li>
-        <li data-fr="Interface utilisateur avec bouton poussoir." data-en="User interface with push button.">Interface utilisateur avec bouton poussoir.</li>
-      </ul>
-
-      <!-- Diagramme Sequence Image -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Diagramme de Séquence" data-en="Sequence Diagram">Diagramme de Séquence</h3>
-        <img src="img-projet-embarquee-diagramme.png" alt="Diagramme_Sequence" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="Le Diagramme de Séquence nous permet permet de visualiser et de structurer les interactions entre différents éléments d'un système au fil du temps." data-en="The Sequence Diagram allows us to visualize and structure the interactions between different elements of a system over time.">Le Diagramme de Séquence nous permet permet de visualiser et de structurer les interactions entre différents éléments d'un système au fil du temps.</p>
+      <div class="bg-teal-50 rounded-2xl p-6 mb-10 border border-teal-100">
+        <h3 class="text-2xl font-bold mb-4 text-teal-800 flex items-center gap-2"><i class="fas fa-microchip"></i> <span data-fr="Fonctionnalités :" data-en="Features:">Fonctionnalités :</span></h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <p class="flex items-center gap-3"><i class="fas fa-temperature-high text-teal-500"></i> <span data-fr="Mesure des paramètres environnementaux" data-en="Measurement of environmental parameters">Mesure des paramètres environnementaux</span></p>
+          <p class="flex items-center gap-3"><i class="fas fa-database text-teal-500"></i> <span data-fr="Stockage des données" data-en="Data storage">Stockage des données</span></p>
+          <p class="flex items-center gap-3"><i class="fas fa-lightbulb text-teal-500"></i> <span data-fr="Indication d'état avec LED" data-en="Status indication with LED">Indication d'état avec LED</span></p>
+          <p class="flex items-center gap-3"><i class="fas fa-hand-pointer text-teal-500"></i> <span data-fr="Interface utilisateur (bouton poussoir)" data-en="User interface (push button)">Interface utilisateur (bouton poussoir)</span></p>
+        </div>
       </div>
 
-      <!-- Guide Utilisateur Image -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Guide Utilisateur" data-en="User Guide">Guide Utilisateur</h3>
-        <img src="img-guide-utilisateur.png" alt="Guide_Utilisateur" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="Nous avons créé un guide utilisateur afin de permettre à l'utilisateur de comprendre comment il doit utiliser la station météo afin de récolter différentes données (données capteurs). Voir le guide sur GitHub" data-en="We have created a user guide to allow the user to understand how to use the weather station to collect different data (sensor data). See the guide on GitHub">Nous avons créé un guide utilisateur afin de permettre à l'utilisateur de comprendre comment il doit utiliser la station météo afin de récolter différentes données (données capteurs). Voir le guide sur GitHub </p>
+      <div class="space-y-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div class="group">
+            <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Diagramme de Séquence" data-en="Sequence Diagram">Diagramme de Séquence</h3>
+            <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+              <img src="img-projet-embarquee-diagramme.png" alt="Diagramme" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+            </div>
+          </div>
+
+          <div class="group">
+            <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Montage Final" data-en="Final Assembly">Montage Final</h3>
+            <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+              <img src="img-montage-station.png" alt="Montage" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div class="group">
+            <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Guide Utilisateur" data-en="User Guide">Guide Utilisateur</h3>
+            <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+              <img src="img-guide-utilisateur.png" alt="Guide Utilisateur" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+            </div>
+          </div>
+          
+          <div class="group">
+            <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Guide Technique" data-en="Technical Guide">Guide Technique</h3>
+            <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+              <img src="img-guide-technique.png" alt="Guide Technique" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Guide Technique Image -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Guide technique" data-en="Technical guide">Guide technique</h3>
-        <img src="img-guide-technique.png" alt="Guide_Technique" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="Nous avons également créé un guide technique pour permettre de comprendre comment la station fonctionne concrètement. Voir le guide sur GitHub." data-en="We have also created a technical guide to understand how the station works in practice. See the guide on GitHub.">Nous avons également créé un guide technique pour permettre de comprendre comment la station fonctionne concrètement. Voir le guide sur GitHub.</p>
-      </div>
-
-      <!-- Montage Station météo Image -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Montage Station météo" data-en="Weather Station Assembly">Montage Station météo</h3>
-        <img src="img-montage-station.png" alt="Montage_station" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="Voici le montage de notre station météo finale." data-en="Here is the assembly of our final weather station.">Voici le montage de notre station météo finale.</p>
-      </div>
-
-      <!-- Bouton Retour et Lien GitHub -->
-      <div class="flex space-x-4 mt-8">
-        <a href="index.html#projects" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Retour aux projets" data-en="Back to projects">Retour aux projets</a>
-        <a href="https://github.com/maelpitois/Systemes_Embarques" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Voir le projet sur GitHub" data-en="View project on GitHub">Voir le projet sur GitHub</a>
+      <div class="flex flex-col sm:flex-row gap-4 mt-16 pt-8 border-t border-gray-100">
+        <a href="index.html#projects" class="text-center bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full hover:bg-gray-300 transition-colors duration-300" data-fr="Retour aux projets" data-en="Back to projects"><i class="fas fa-arrow-left mr-2"></i> Retour</a>
+        <a href="https://github.com/maelpitois/Systemes_Embarques" target="_blank" class="text-center bg-gray-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-2xl hover:bg-black transform hover:-translate-y-1 transition-all duration-300" data-fr="Voir sur GitHub" data-en="View on GitHub"><i class="fab fa-github mr-2"></i> Voir sur GitHub</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
+  <footer class="bg-gray-900 text-gray-400 py-6 mt-auto">
     <div class="container mx-auto px-6 text-center">
       <p data-fr="&copy; 2024 Maël Pitois. Tous droits réservés." data-en="&copy; 2024 Maël Pitois. All rights reserved.">&copy; 2024 Maël Pitois. Tous droits réservés.</p>
     </div>
@@ -107,21 +96,14 @@
       document.documentElement.lang = lang;
       const switcher = document.getElementById('lang-switcher');
       if(switcher) switcher.value = lang;
-      
       document.querySelectorAll('[data-en]').forEach(el => {
-        if(el.hasAttribute(`data-${lang}`)) {
-          el.innerHTML = el.getAttribute(`data-${lang}`);
-        }
+        if(el.hasAttribute(`data-${lang}`)) el.innerHTML = el.getAttribute(`data-${lang}`);
       });
     }
-
     const savedLang = localStorage.getItem('portfolio_lang') || 'fr';
     setLanguage(savedLang);
-
     const langSwitcher = document.getElementById('lang-switcher');
-    if(langSwitcher) {
-      langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
-    }
+    if(langSwitcher) langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
   </script>
 </body>
 </html>
