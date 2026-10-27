@@ -1,73 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-fr="Projet - Répertoire téléphonique" data-en="Project - Phone directory">Projet - Répertoire téléphonique</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <style>
-    .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
-    @keyframes fadeIn { to { opacity: 1; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Projet — Répertoire téléphonique" data-en="Project — Phone Directory">Projet — Répertoire téléphonique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] } } }
+        }
+    </script>
+    <style>
+        body { background-color: #090D16; color: #F8FAFC; }
+        .glass-nav { background: rgba(9, 13, 22, 0.8); backdrop-filter: blur(16px); }
+        .bento-card { background: rgba(17, 24, 39, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed fade-in min-h-screen flex flex-col">
+<body class="font-sans antialiased min-h-screen flex flex-col">
 
-  <header class="bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg text-white shadow-xl sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <select id="lang-switcher" class="bg-gray-800 text-white text-sm rounded-full border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none px-3 py-1 cursor-pointer hover:bg-gray-700 transition-colors">
-          <option value="fr">FR</option>
-          <option value="en">EN</option>
-        </select>
-        <h1 class="text-2xl font-extrabold tracking-tight"><a href="index.html">Maël <span class="text-indigo-400">Pitois</span></a></h1>
-      </div>
-      <nav class="space-x-6 hidden md:block font-medium">
-        <a href="index.html#projects" class="hover:text-indigo-400 transition-colors duration-300 flex items-center gap-2"><i class="fas fa-arrow-left"></i> <span data-fr="Retour" data-en="Back">Retour</span></a>
-      </nav>
-    </div>
-  </header>
+    <!-- Navigation -->
+    <header class="glass-nav border-b border-white/10 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-5">
+                <div class="inline-flex items-center bg-slate-900/90 p-1 rounded-xl border border-white/10 font-mono text-xs">
+                    <button onclick="setLanguage('fr')" id="btn-fr" class="px-2.5 py-1.5 rounded-lg font-semibold transition-all">FR</button>
+                    <button onclick="setLanguage('en')" id="btn-en" class="px-2.5 py-1.5 rounded-lg font-semibold transition-all">EN</button>
+                </div>
+                <a href="index.html" class="font-bold text-lg tracking-tight text-white">Maël <span class="text-indigo-400">Pitois</span></a>
+            </div>
+            <a href="index.html#projects" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-medium text-slate-200 transition-all">
+                <i class="fas fa-arrow-left text-xs"></i>
+                <span data-fr="Tous les projets" data-en="All projects">Tous les projets</span>
+            </a>
+        </div>
+    </header>
 
-  <section class="container mx-auto px-4 sm:px-6 py-12 lg:py-20 flex-grow">
-    <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 max-w-4xl mx-auto border-t-8 border-gray-700 relative">
-      <h2 class="text-4xl lg:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight" data-fr="Répertoire téléphonique" data-en="Phone directory">Répertoire téléphonique</h2>
-      <p class="text-xl mb-10 text-gray-600 leading-relaxed" data-fr="Ce projet vise à créer un simulateur de modulation en Python, illustrant le processus d'encodage et de transmission d'un message par modulation d'amplitude (ASK). Il montre comment un fichier texte est converti en signal binaire modulé, puis transmis et reçu via un canal de communication simulé, en suivant les étapes classiques de la chaîne de transmission numérique (encodage, modulation, démodulation, décodage)." data-en="This project aims to create a modulation simulator in Python, illustrating the encoding and transmission process of a message by amplitude modulation (ASK). It shows how a text file is converted into a modulated binary signal, then transmitted and received via a simulated communication channel, following the classic steps of the digital transmission chain (encoding, modulation, demodulation, decoding).">Ce projet vise à créer un simulateur de modulation en Python...</p>
-      
-      <div class="bg-gray-50 rounded-2xl p-6 mb-10 border border-gray-100">
-        <h3 class="text-2xl font-bold mb-4 text-gray-800 flex items-center gap-2"><i class="fas fa-list"></i> <span data-fr="Fonctionnalités principales :" data-en="Main features:">Fonctionnalités principales :</span></h3>
-        <ul class="list-none space-y-3 text-gray-700">
-          <li class="flex items-center gap-3"><i class="fas fa-address-book text-gray-500"></i> <span data-fr="Ajout et suppression de contacts dans un fichier CSV." data-en="Adding and deleting contacts in a CSV file.">Ajout et suppression de contacts dans un fichier CSV.</span></li>
-          <li class="flex items-center gap-3"><i class="fas fa-search text-gray-500"></i> <span data-fr="Recherche rapide des contacts par nom ou numéro de téléphone." data-en="Quick search for contacts by name or phone number.">Recherche rapide des contacts par nom ou numéro de téléphone.</span></li>
-          <li class="flex items-center gap-3"><i class="fas fa-file-export text-gray-500"></i> <span data-fr="Génération d'un fichier exécutable pour une utilisation autonome." data-en="Generation of an executable file for standalone use.">Génération d'un fichier exécutable pour une utilisation autonome.</span></li>
-        </ul>
-      </div>
+    <!-- Contenu Principal -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow">
+        <div class="bento-card rounded-3xl p-8 sm:p-12">
+            <div class="flex flex-wrap gap-2 font-mono text-xs text-indigo-400 mb-4">
+                <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">Python</span>
+                <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">CSV</span>
+                <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">Standalone App</span>
+            </div>
 
-      <div class="mt-10 pt-8 border-t border-gray-100">
-        <a href="index.html#projects" class="inline-flex items-center bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full hover:bg-gray-300 transition-colors duration-300" data-fr="Retour aux projets" data-en="Back to projects"><i class="fas fa-arrow-left mr-2"></i> Retour aux projets</a>
-      </div>
-    </div>
-  </section>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white mb-6" data-fr="Répertoire téléphonique" data-en="Phone Directory Application">Répertoire téléphonique</h1>
+            
+            <p class="text-slate-400 text-lg leading-relaxed mb-10" data-fr="Conception d'une application de gestion de contacts permettant la persistance des données via fichier CSV, la recherche instantanée et l'export sous forme d'exécutable autonome." data-en="Design of a contact management application enabling CSV data persistence, instant search, and packaging as a standalone executable.">
+                Conception d'une application de gestion de contacts permettant la persistance des données via fichier CSV, la recherche instantanée et l'export sous forme d'exécutable autonome.
+            </p>
 
-  <footer class="bg-gray-900 text-gray-400 py-6 mt-auto">
-    <div class="container mx-auto px-6 text-center">
-      <p data-fr="&copy; 2024 Maël Pitois. Tous droits réservés." data-en="&copy; 2024 Maël Pitois. All rights reserved.">&copy; 2024 Maël Pitois. Tous droits réservés.</p>
-    </div>
-  </footer>
+            <h2 class="text-xl font-bold text-white mb-5" data-fr="Fonctionnalités principales :" data-en="Key Features:">Fonctionnalités principales :</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+                <div class="p-5 rounded-2xl bg-slate-950/60 border border-white/5">
+                    <i class="fas fa-user-plus text-indigo-400 text-xl mb-3"></i>
+                    <p class="text-sm text-slate-200 font-medium" data-fr="Ajout et suppression de contacts dans un fichier CSV." data-en="Add and delete contacts in a CSV file.">Ajout et suppression de contacts dans un fichier CSV.</p>
+                </div>
+                <div class="p-5 rounded-2xl bg-slate-950/60 border border-white/5">
+                    <i class="fas fa-magnifying-glass text-cyan-400 text-xl mb-3"></i>
+                    <p class="text-sm text-slate-200 font-medium" data-fr="Recherche rapide par nom ou numéro de téléphone." data-en="Fast search by name or phone number.">Recherche rapide par nom ou numéro de téléphone.</p>
+                </div>
+                <div class="p-5 rounded-2xl bg-slate-950/60 border border-white/5">
+                    <i class="fas fa-box-open text-emerald-400 text-xl mb-3"></i>
+                    <p class="text-sm text-slate-200 font-medium" data-fr="Génération d'un fichier exécutable pour une utilisation autonome." data-en="Executable file generation for standalone use.">Génération d'un fichier exécutable pour une utilisation autonome.</p>
+                </div>
+            </div>
 
-  <script>
-    function setLanguage(lang) {
-      localStorage.setItem('portfolio_lang', lang);
-      document.documentElement.lang = lang;
-      const switcher = document.getElementById('lang-switcher');
-      if(switcher) switcher.value = lang;
-      document.querySelectorAll('[data-en]').forEach(el => {
-        if(el.hasAttribute(`data-${lang}`)) el.innerHTML = el.getAttribute(`data-${lang}`);
-      });
-    }
-    const savedLang = localStorage.getItem('portfolio_lang') || 'fr';
-    setLanguage(savedLang);
-    const langSwitcher = document.getElementById('lang-switcher');
-    if(langSwitcher) langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
-  </script>
+            <a href="index.html#projects" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition-all">
+                <i class="fas fa-arrow-left"></i>
+                <span data-fr="Retour aux projets" data-en="Back to projects">Retour aux projets</span>
+            </a>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 py-8 text-center text-xs font-mono text-slate-500">
+        <p data-fr="© 2026 Maël Pitois — Tous droits réservés." data-en="© 2026 Maël Pitois — All rights reserved.">© 2026 Maël Pitois — Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            localStorage.setItem('portfolio_lang', lang);
+            document.documentElement.lang = lang;
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.className = lang === 'fr' ? 'px-2.5 py-1.5 rounded-lg font-semibold bg-indigo-600 text-white shadow transition-all' : 'px-2.5 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition-all';
+                btnEn.className = lang === 'en' ? 'px-2.5 py-1.5 rounded-lg font-semibold bg-indigo-600 text-white shadow transition-all' : 'px-2.5 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition-all';
+            }
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if (el.hasAttribute(`data-${lang}`)) el.innerHTML = el.getAttribute(`data-${lang}`);
+            });
+        }
+        setLanguage(localStorage.getItem('portfolio_lang') || 'fr');
+    </script>
 </body>
 </html>
