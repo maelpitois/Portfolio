@@ -1,94 +1,88 @@
 <!DOCTYPE html>  
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-fr="Projet - Base de données qualité de l'air" data-en="Project - Air quality database">Projet - Base de données qualité de l'air</title>
+  <title data-fr="Projet - BDD Qualité de l'air" data-en="Project - Air quality DB">Projet - BDD Qualité de l'air</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    .hover-grow:hover {
-      transform: scale(1.05);
-    }
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.2s forwards;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-    .border-black {
-      border: 1px solid black;
-    }
+    .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans leading-normal fade-in min-h-screen flex flex-col">
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed fade-in min-h-screen flex flex-col selection:bg-indigo-200">
 
   <!-- Section Navigation -->
-  <header class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+  <header class="bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg text-white shadow-xl sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-4">
-        <select id="lang-switcher" class="bg-gray-700 text-white text-sm rounded border border-gray-600 focus:outline-none p-1 cursor-pointer">
+        <select id="lang-switcher" class="bg-gray-800 text-white text-sm rounded-full border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none px-3 py-1 cursor-pointer hover:bg-gray-700 transition-colors">
           <option value="fr">FR</option>
           <option value="en">EN</option>
         </select>
-        <h1 class="text-3xl font-extrabold">Maël Pitois</h1>
+        <h1 class="text-2xl font-extrabold tracking-tight"><a href="index.html">Maël <span class="text-indigo-400">Pitois</span></a></h1>
       </div>
-      <nav class="space-x-4 hidden md:block">
-        <a href="index.html#about" class="hover:underline text-lg" data-fr="À propos" data-en="About">À propos</a>
-        <a href="index.html#projects" class="hover:underline text-lg" data-fr="Projets" data-en="Projects">Projets</a>
-        <a href="index.html#skills" class="hover:underline text-lg" data-fr="Compétences" data-en="Skills">Compétences</a>
-        <a href="index.html#contact" class="hover:underline text-lg" data-fr="Contact" data-en="Contact">Contact</a>
+      <nav class="space-x-6 hidden md:block font-medium">
+        <a href="index.html#projects" class="hover:text-indigo-400 transition-colors duration-300 flex items-center gap-2"><i class="fas fa-arrow-left"></i> <span data-fr="Retour au portfolio" data-en="Back to portfolio">Retour au portfolio</span></a>
       </nav>
     </div>
   </header>
 
   <!-- Section Détails du Projet -->
-  <section id="project-details" class="container mx-auto px-6 py-20 flex-grow">
-    <div class="bg-white rounded-lg shadow-lg p-10 max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-4 text-gray-800" data-fr="Base de données qualité de l'air" data-en="Air quality database">Base de données qualité de l'air</h2>
-      <p class="text-xl mb-6 text-gray-600" data-fr="Ce projet consiste à créer une base de données MySQL pour stocker et analyser des relevés de la qualité de l'air dans différentes régions. L'objectif est d'assurer une gestion efficace des données pour leur consultation et leur analyse." data-en="This project involves creating a MySQL database to store and analyze air quality readings in different regions. The objective is to ensure efficient data management for consultation and analysis.">Ce projet consiste à créer une base de données MySQL pour stocker et analyser des relevés de la qualité de l'air dans différentes régions. L'objectif est d'assurer une gestion efficace des données pour leur consultation et leur analyse.</p>
+  <section class="container mx-auto px-4 sm:px-6 py-12 lg:py-20 flex-grow">
+    <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 max-w-5xl mx-auto border-t-8 border-indigo-600 relative overflow-hidden">
+      <h2 class="text-4xl lg:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight" data-fr="Base de données qualité de l'air" data-en="Air quality database">Base de données qualité de l'air</h2>
+      <p class="text-xl mb-10 text-gray-600 leading-relaxed" data-fr="Ce projet consiste à créer une base de données MySQL pour stocker et analyser des relevés de la qualité de l'air dans différentes régions. L'objectif est d'assurer une gestion efficace des données pour leur consultation et leur analyse." data-en="This project involves creating a MySQL database to store and analyze air quality readings in different regions. The objective is to ensure efficient data management for consultation and analysis.">Ce projet consiste à créer une base de données MySQL pour stocker et analyser des relevés de la qualité de l'air dans différentes régions.</p>
       
-      <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Fonctionnalités principales :" data-en="Main features:">Fonctionnalités principales :</h3>
-      <ul class="list-disc list-inside mb-6 text-gray-600">
-        <li data-fr="Stockage structuré des données de qualité de l'air avec MySQL." data-en="Structured storage of air quality data with MySQL.">Stockage structuré des données de qualité de l'air avec MySQL.</li>
-        <li data-fr="Utilisation de requêtes SQL pour l'analyse des données." data-en="Use of SQL queries for data analysis.">Utilisation de requêtes SQL pour l'analyse des données.</li>
-        <li data-fr="Optimisation de la BDD afin d'optimiser le temps pour la consultation des données." data-en="Optimization of the DB to improve data consultation time.">Optimisation de la BDD afin d'optimiser le temps pour la consultation des données.</li>
-        <li data-fr="Utilisation d'un MCD et d'un MLD pour la modélisation de la base de données." data-en="Use of a CDM and LDM for database modeling.">Utilisation d'un MCD et d'un MLD pour la modélisation de la base de données.</li>
-      </ul>
-
-      <!-- MCD Image -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Modèle Conceptuel de Données (MCD)" data-en="Conceptual Data Model (CDM)">Modèle Conceptuel de Données (MCD)</h3>
-        <img src="img-MCD-bdd.png" alt="MCD" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="Le MCD illustre les entités principales (représentées par les blocs bleus) et leurs relations (représentées par les blocs orange) pour modéliser les informations nécessaires à la gestion des relevés de qualité de l'air. Il permet d'établir la base de notre BDD." data-en="The CDM illustrates the main entities (represented by blue blocks) and their relationships (represented by orange blocks) to model the information needed to manage air quality readings. It establishes the foundation of our DB.">Le MCD illustre les entités principales (représentées par les blocs bleus) et leurs relations (représentées par les blocs orange) pour modéliser les informations nécessaires à la gestion des relevés de qualité de l'air. Il permet d'établir la base de notre BDD.</p>
+      <div class="bg-gray-50 rounded-2xl p-6 mb-10 border border-gray-100">
+        <h3 class="text-2xl font-bold mb-4 text-indigo-700 flex items-center gap-2"><i class="fas fa-list-check"></i> <span data-fr="Fonctionnalités principales :" data-en="Main features:">Fonctionnalités principales :</span></h3>
+        <ul class="list-none space-y-3 text-gray-700">
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span data-fr="Stockage structuré des données de qualité de l'air avec MySQL." data-en="Structured storage of air quality data with MySQL.">Stockage structuré des données de qualité de l'air avec MySQL.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span data-fr="Utilisation de requêtes SQL pour l'analyse des données." data-en="Use of SQL queries for data analysis.">Utilisation de requêtes SQL pour l'analyse des données.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span data-fr="Optimisation de la BDD pour réduire le temps de consultation." data-en="Optimization of the DB to improve data consultation time.">Optimisation de la BDD pour réduire le temps de consultation.</span></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i> <span data-fr="Utilisation d'un MCD et d'un MLD pour la modélisation." data-en="Use of a CDM and LDM for modeling.">Utilisation d'un MCD et d'un MLD pour la modélisation.</span></li>
+        </ul>
       </div>
 
-      <!-- MLD Image -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Modèle Logique de Données (MLD)" data-en="Logical Data Model (LDM)">Modèle Logique de Données (MLD)</h3>
-        <img src="img-MLD-bdd.png" alt="MLD" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="Après avoir schématisé le MCD, il faut faire le MLD qui traduit le MCD en une structure adaptée à la base de données relationnelle, détaillant les tables et leurs relations. Ensuite, il faut implémenter le MLD dans le logiciel MySQL et la BDD est créée." data-en="After diagramming the CDM, we must create the LDM which translates the CDM into a structure suitable for the relational database, detailing the tables and their relationships. Then, the LDM is implemented in MySQL software and the DB is created.">Après avoir schématisé le MCD, il faut faire le MLD qui traduit le MCD en une structure adaptée à la base de données relationnelle, détaillant les tables et leurs relations. Ensuite, il faut implémenter le MLD dans le logiciel MySQL et la BDD est créée. </p>
+      <div class="space-y-16">
+        <!-- Image Bloc -->
+        <div class="group">
+          <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Modèle Conceptuel de Données (MCD)" data-en="Conceptual Data Model (CDM)">Modèle Conceptuel de Données (MCD)</h3>
+          <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+            <img src="img-MCD-bdd.png" alt="MCD" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+          </div>
+          <p class="text-gray-600 leading-relaxed" data-fr="Le MCD illustre les entités principales et leurs relations pour modéliser les informations nécessaires à la gestion des relevés." data-en="The CDM illustrates the main entities and their relationships to model the information needed to manage readings.">Le MCD illustre les entités principales et leurs relations pour modéliser les informations nécessaires à la gestion des relevés.</p>
+        </div>
+
+        <!-- Image Bloc -->
+        <div class="group">
+          <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Modèle Logique de Données (MLD)" data-en="Logical Data Model (LDM)">Modèle Logique de Données (MLD)</h3>
+          <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+            <img src="img-MLD-bdd.png" alt="MLD" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+          </div>
+          <p class="text-gray-600 leading-relaxed" data-fr="Traduction du MCD en une structure adaptée à la base de données relationnelle, détaillant les tables et leurs clés." data-en="Translation of the CDM into a structure suitable for the relational database, detailing the tables and their keys.">Traduction du MCD en une structure adaptée à la base de données relationnelle, détaillant les tables et leurs clés.</p>
+        </div>
+
+        <!-- Image Bloc -->
+        <div class="group">
+          <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Exemple de Requête SQL" data-en="SQL Query Example">Exemple de Requête SQL</h3>
+          <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
+            <img src="img-requete-bdd.png" alt="Requête SQL" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+          </div>
+          <p class="text-gray-600 leading-relaxed" data-fr="Exemple de requête utilisée pour obtenir la quantité de gaz relevée dans la région Île-de-France pour l'année 2020." data-en="Example of a query used to get the amount of gas recorded in the Île-de-France region for the year 2020.">Exemple de requête utilisée pour obtenir la quantité de gaz relevée dans la région Île-de-France pour l'année 2020.</p>
+        </div>
       </div>
 
-      <!-- Requête SQL Image -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Exemple de Requête SQL" data-en="SQL Query Example">Exemple de Requête SQL</h3>
-        <img src="img-requete-bdd.png" alt="Requête SQL" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2" data-fr="Pour finir ce projet il suffit de tester la BDD avec des requêtes, voici un exemple de requête SQL utilisée pour obtenir la quantité de gaz relevée dans la région &quot;Ile de France&quot; pour l'année 2020, en groupant par type de gaz." data-en="To finish this project, we test the DB with queries; here is an example of an SQL query used to get the amount of gas recorded in the &quot;Ile de France&quot; region for the year 2020, grouped by gas type.">Pour finir ce projet il suffit de tester la BDD avec des requêtes, voici un exemple de requête SQL utilisée pour obtenir la quantité de gaz relevée dans la région "Ile de France" pour l'année 2020, en groupant par type de gaz.</p>
-      </div>
-
-      <!-- Bouton Retour et Lien GitHub -->
-      <div class="flex space-x-4 mt-8">
-        <a href="index.html#projects" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Retour aux projets" data-en="Back to projects">Retour aux projets</a>
-        <a href="https://github.com/maelpitois/Projet_BDD" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Voir le projet sur GitHub" data-en="View project on GitHub">Voir le projet sur GitHub</a>
+      <!-- Boutons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-16 pt-8 border-t border-gray-100">
+        <a href="index.html#projects" class="text-center bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full hover:bg-gray-300 transition-colors duration-300" data-fr="Retour aux projets" data-en="Back to projects"><i class="fas fa-arrow-left mr-2"></i> Retour</a>
+        <a href="https://github.com/maelpitois/Projet_BDD" target="_blank" class="text-center bg-gray-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-2xl hover:bg-black transform hover:-translate-y-1 transition-all duration-300" data-fr="Voir sur GitHub" data-en="View on GitHub"><i class="fab fa-github mr-2"></i> Voir sur GitHub</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
+  <footer class="bg-gray-900 text-gray-400 py-6 mt-auto">
     <div class="container mx-auto px-6 text-center">
       <p data-fr="&copy; 2024 Maël Pitois. Tous droits réservés." data-en="&copy; 2024 Maël Pitois. All rights reserved.">&copy; 2024 Maël Pitois. Tous droits réservés.</p>
     </div>
@@ -100,21 +94,14 @@
       document.documentElement.lang = lang;
       const switcher = document.getElementById('lang-switcher');
       if(switcher) switcher.value = lang;
-      
       document.querySelectorAll('[data-en]').forEach(el => {
-        if(el.hasAttribute(`data-${lang}`)) {
-          el.innerHTML = el.getAttribute(`data-${lang}`);
-        }
+        if(el.hasAttribute(`data-${lang}`)) el.innerHTML = el.getAttribute(`data-${lang}`);
       });
     }
-
     const savedLang = localStorage.getItem('portfolio_lang') || 'fr';
     setLanguage(savedLang);
-
     const langSwitcher = document.getElementById('lang-switcher');
-    if(langSwitcher) {
-      langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
-    }
+    if(langSwitcher) langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
   </script>
 </body>
 </html>
