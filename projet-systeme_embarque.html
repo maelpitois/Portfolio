@@ -1,100 +1,191 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet - Création d'une station météo embarquée</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    .hover-grow:hover {
-      transform: scale(1.05);
-    }
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.2s forwards;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-    .border-black {
-      border: 1px solid black;
-    }
-    
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Portfolio - Maël Pitois" data-en="Portfolio - Maël Pitois">Portfolio - Maël Pitois</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .hover-grow:hover {
+            transform: scale(1.05);
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.2s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans leading-normal fade-in min-h-screen flex flex-col">
+<body class="bg-gray-100 text-gray-900 font-sans leading-normal fade-in">
+    <!-- Section Navigation -->
+    <header class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Sélecteur de langue + Titre -->
+            <div class="flex items-center space-x-4">
+                <select id="lang-switcher" class="bg-gray-700 text-white text-sm rounded border border-gray-600 focus:outline-none p-1 cursor-pointer">
+                    <option value="fr">FR</option>
+                    <option value="en">EN</option>
+                </select>
+                <h1 class="text-2xl font-extrabold">Maël Pitois</h1>
+            </div>
+            <p class="hidden sm:block text-sm lg:text-lg" data-fr="Étudiant ingénieur Informatique - 2ème année à CESI École d'Ingénieur Saint-Étienne-du-Rouvray" data-en="Computer Engineering Student - 2nd year at CESI Engineering School Saint-Étienne-du-Rouvray">Étudiant ingénieur Informatique - 2ème année à CESI École d'Ingénieur Saint-Étienne-du-Rouvray</p>
+            <nav class="space-x-4 hidden md:flex">
+                <a href="#about" class="hover:underline text-sm lg:text-lg" data-fr="À propos" data-en="About">À propos</a>
+                <a href="#projects" class="hover:underline text-sm lg:text-lg" data-fr="Projets" data-en="Projects">Projets</a>
+                <a href="#skills" class="hover:underline text-sm lg:text-lg" data-fr="Compétences" data-en="Skills">Compétences</a>
+                <a href="#contact" class="hover:underline text-sm lg:text-lg" data-fr="Contact" data-en="Contact">Contact</a>
+            </nav>
+            <!-- Menu hamburger pour mobile -->
+            <button id="menu-toggle" class="block md:hidden focus:outline-none text-lg">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Menu mobile caché initialement -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-700">
+            <a href="#about" class="block text-sm text-center p-2 text-white" data-fr="À propos" data-en="About">À propos</a>
+            <a href="#projects" class="block text-sm text-center p-2 text-white" data-fr="Projets" data-en="Projects">Projets</a>
+            <a href="#skills" class="block text-sm text-center p-2 text-white" data-fr="Compétences" data-en="Skills">Compétences</a>
+            <a href="#contact" class="block text-sm text-center p-2 text-white" data-fr="Contact" data-en="Contact">Contact</a>
+        </div>
+    </header>
 
-  <!-- Section Navigation -->
-  <header class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-3xl font-extrabold">Maël Pitois</h1>
-      <nav class="space-x-4">
-        <a href="index.html#about" class="hover:underline text-lg">À propos</a>
-        <a href="index.html#projects" class="hover:underline text-lg">Projets</a>
-        <a href="index.html#skills" class="hover:underline text-lg">Compétences</a>
-        <a href="index.html#contact" class="hover:underline text-lg">Contact</a>
-      </nav>
+    <!-- Section Introduction -->
+    <section id="about" class="container mx-auto px-4 sm:px-6 py-12 text-center">
+        <div class="bg-white rounded-lg shadow-lg p-6 max-w-3xl mx-auto hover-grow transition-transform duration-300">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800" data-fr="Bienvenue" data-en="Welcome">Bienvenue</h2>
+            <p class="text-lg mb-4 text-gray-600" data-fr="Agé de 21 ans, je suis en deuxième année de cycle ingénieur à CESI École d'Ingénieurs de Saint-Étienne-du-Rouvray, avec une spécialisation en informatique. Passionné par les technologies, j’ai développé des compétences solides en Python, JAVA, JavaScript, Spring Boot, Angular, SQL et en réseau grâce à divers projets académiques et personnels." data-en="At 21 years old, I am in my second year of the engineering cycle at CESI Engineering School in Saint-Étienne-du-Rouvray, specializing in computer science. Passionate about technology, I have developed solid skills in Python, Java, JavaScript, Spring Boot, Angular, SQL and networking through various academic and personal projects.">
+                Agé de 21 ans, je suis en deuxième année de cycle ingénieur à CESI École d'Ingénieurs de Saint-Étienne-du-Rouvray, avec une spécialisation en informatique. Passionné par les technologies, j’ai développé des compétences solides en Python, JAVA, JavaScript, Spring Boot, Angular, SQL et en réseau grâce à divers projets académiques et personnels.
+            </p>
+            <p class="text-lg mb-4 text-gray-600" data-fr="Je suis motivé à mettre mes compétences en pratique, que ce soit en équipe ou en autonomie, et à approfondir mon expertise en ingénierie informatique." data-en="I am motivated to put my skills into practice, whether in a team or independently, and to deepen my expertise in computer engineering.">
+                Je suis motivé à mettre mes compétences en pratique, que ce soit en équipe ou en autonomie, et à approfondir mon expertise en ingénierie informatique.
+            </p>
+            <a href="#contact" class="inline-block bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Me contacter" data-en="Contact me">
+                Me contacter
+            </a>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="skills" class="bg-gray-200 container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800" data-fr="Mes compétences" data-en="My skills">Mes compétences</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-screen-lg mx-auto">
+            <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
+                <img src="img-logo-reseau.png" alt="Réseau" class="w-24 h-24 mx-auto mb-4 object-contain">
+                <h3 class="text-xl font-bold mb-2 text-gray-700" data-fr="Réseau" data-en="Networking">Réseau</h3>
+                <p class="text-gray-600" data-fr="Configuration d'équipement réseau" data-en="Network equipment configuration">Configuration d'équipement réseau</p>
+            </div>
+            <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
+                <img src="img-logo-html-css.png" alt="HTML & CSS" class="w-24 h-24 mx-auto mb-4 object-contain">
+                <h3 class="text-xl font-bold mb-2 text-gray-700">JAVA, JavaScript, Spring Boot, Angular</h3>
+                <p class="text-gray-600" data-fr="Création de sites web avec Java, JavaScript, Spring Boot et Angular" data-en="Website creation with Java, JavaScript, Spring Boot, and Angular">Création de sites web avec Java, JavaScript, Spring Boot et Angular</p>
+            </div>
+            <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
+                <img src="img-logo-mysql.png" alt="MySQL" class="w-24 h-24 mx-auto mb-4 object-contain">
+                <h3 class="text-xl font-bold mb-2 text-gray-700">MySQL</h3>
+                <p class="text-gray-600" data-fr="Conception et gestion de bases de données avec MySQL et utilisation de requêtes SQL." data-en="Database design and management with MySQL and use of SQL queries.">Conception et gestion de bases de données avec MySQL et utilisation de requêtes SQL.</p>
+            </div>
+            <div class="bg-white p-6 shadow-md rounded-lg hover-grow transition-transform duration-300 text-center flex flex-col justify-between min-h-[200px]">
+                <img src="img-logo-github.png" alt="Github" class="w-24 h-24 mx-auto mb-4 object-contain">
+                <h3 class="text-xl font-bold mb-2 text-gray-700">Github</h3>
+                <p class="text-gray-600" data-fr="Gestion de versionnement avec Github pour le suivi de projet en équipe." data-en="Version control management with Github for team project tracking.">Gestion de versionnement avec Github pour le suivi de projet en équipe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects" class="bg-white py-20">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-fr="Projets" data-en="Projects">Projets</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-200 p-6 shadow-md rounded-lg hover-grow transition-transform duration-300">
+                    <img src="img1-projet-systeme-embarquee.png" alt="Station météo embarquée" class="w-full h-40 object-cover mb-4 rounded">
+                    <h3 class="text-xl font-bold mb-2 text-gray-700" data-fr="Création d'une station météo embarquée" data-en="Creation of an embedded weather station">Création d'une station météo embarquée</h3>
+                    <p class="mb-4 text-gray-600" data-fr="Projet de conception et de développement d'une station météo embarquée en utilisant un Arduino Uno et divers capteurs Grove pour relever et analyser les données météo." data-en="Design and development project of an embedded weather station using an Arduino Uno and various Grove sensors to record and analyze weather data.">Projet de conception et de développement d'une station météo embarquée en utilisant un Arduino Uno et divers capteurs Grove pour relever et analyser les données météo.</p>
+                    <a href="projet-systeme_embarque.html" class="inline-block mt-4 bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+                </div>
+                <div class="bg-gray-200 p-6 shadow-md rounded-lg hover-grow transition-transform duration-300">
+                    <img src="img-projet-signal.webp" alt="Simulateur de Modulation ASK" class="w-full h-40 object-cover mb-4 rounded">
+                    <h3 class="text-xl font-bold mb-2 text-gray-700" data-fr="Simulateur de Modulation ASK et FSK en Python" data-en="ASK and FSK Modulation Simulator in Python">Simulateur de Modulation ASK et FSK en Python</h3>
+                    <p class="mb-4 text-gray-600" data-fr="Développement d'un programme pour simuler la modulation ASK et FSK, pour encoder et recevoir un message." data-en="Development of a program to simulate ASK and FSK modulation, to encode and receive a message.">Développement d'un programme pour simuler la modulation ASK et FSK, pour encoder et recevoir un message.</p>
+                    <a href="projet-modulation.html" class="inline-block mt-4 bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+                </div>
+                <div class="bg-gray-200 p-6 shadow-md rounded-lg hover-grow transition-transform duration-300">
+                    <img src="img-projet-bdd.jpg" alt="Base de données qualité de l'air" class="w-full h-40 object-cover mb-4 rounded">
+                    <h3 class="text-xl font-bold mb-2 text-gray-700" data-fr="Gestion d'une base de données sur la qualité de l'air" data-en="Air quality database management">Gestion d'une base de données sur la qualité de l'air</h3>
+                    <p class="mb-4 text-gray-600" data-fr="Réalisation d'une base de données SQL pour analyser la qualité de l'air dans différentes zones géographiques." data-en="Creation of a SQL database to analyze air quality in different geographical areas.">Réalisation d'une base de données SQL pour analyser la qualité de l'air dans différentes zones géographiques.</p>
+                    <a href="projet-base-donnees.html" class="inline-block mt-4 bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+                </div>
+                <div class="bg-gray-200 p-6 shadow-md rounded-lg hover-grow transition-transform duration-300">
+                    <img src="img-projet-reseau.webp" alt="Réseau" class="w-full h-40 object-cover mb-4 rounded">
+                    <h3 class="text-xl font-bold mb-2 text-gray-700" data-fr="Configuration d'un réseau" data-en="Network configuration">Configuration d'un réseau</h3>
+                    <p class="mb-4 text-gray-600" data-fr="Configuration du réseau d'une ville sur Cisco Packet Tracer" data-en="Configuration of a city network on Cisco Packet Tracer">Configuration du réseau d'une ville sur Cisco Packet Tracer</p>
+                    <a href="projet-reseau.html" class="inline-block mt-4 bg-gray-800 text-white py-2 px-4 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="bg-gray-200 py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-fr="Contactez-moi" data-en="Contact me">Contactez-moi</h2>
+            <div class="text-center">
+                <p class="text-xl mb-8 text-gray-600" data-fr="N'hésitez pas à me contacter par e-mail ou par téléphone :" data-en="Feel free to contact me by email or phone:">N'hésitez pas à me contacter par e-mail ou par téléphone :</p>
+                <div class="flex justify-center items-center space-x-6 mb-8">
+                <!-- Email -->
+                <div>
+                    <a href="mailto:mael.pitois@gmail.com" class="text-gray-700 hover:text-gray-900 transition-colors">
+                        <i class="fas fa-envelope h-8 w-8 inline-block"></i>
+                        <span class="ml-2 text-lg">mael.pitois@gmail.com</span>
+                    </a>
+                </div>
+                <!-- Numéro de téléphone -->
+                <div>
+                    <a href="tel:+33785765748" class="text-gray-700 hover:text-gray-900 transition-colors">
+                        <i class="fas fa-phone h-8 w-8 inline-block"></i>
+                        <span class="ml-2 text-lg">07 83 08 87 85</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
+    </section>
 
-  <!-- Section Détails du Projet -->
-  <section id="project-details" class="container mx-auto px-6 py-20 flex-grow">
-    <div class="bg-white rounded-lg shadow-lg p-10 max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-4 text-gray-800">Création d'une station météo embarquée</h2>
-      <p class="text-xl mb-6 text-gray-600">Ce projet consiste à créer une analyse système, une architecture de programme, une démonstration fonctionnelle, une documentation technique et utilisateur.</p>
-      
-      <h3 class="text-2xl font-semibold mb-4 text-gray-700">Fonctionnalités principales :</h3>
-      <ul class="list-disc list-inside mb-6 text-gray-600">
-        <li>Mesure des paramètres environnementaux.</li>
-        <li>Stockage des données.</li>
-        <li>Indication d'état avec LED.</li>
-        <li>Interface utilisateur avec bouton poussoir.</li>
-        
-      </ul>
+    <!-- Script de traduction et menu mobile -->
+    <script>
+        function setLanguage(lang) {
+            localStorage.setItem('portfolio_lang', lang);
+            document.documentElement.lang = lang;
+            const switcher = document.getElementById('lang-switcher');
+            if(switcher) switcher.value = lang;
+            
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if(el.hasAttribute(`data-${lang}`)) {
+                    el.innerHTML = el.getAttribute(`data-${lang}`);
+                }
+            });
+        }
 
-      <!-- Diagramme Sequence Image -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Diagramme de Séquence</h3>
-        <img src="img-projet-embarquee-diagramme.png" alt="Diagramme_Sequence" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2">Le Diagramme de Séquence nous permet permet de visualiser et de structurer les interactions entre différents éléments d'un système au fil du temps.</p>
-      </div>
+        const savedLang = localStorage.getItem('portfolio_lang') || 'fr';
+        setLanguage(savedLang);
 
-      <!-- Guide Utilisateur Image -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Guide Utilisateur</h3>
-        <img src="img-guide-utilisateur.png" alt="Guide_Utilisateur" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2">Nous avons créé un guide utilisateur afin de permettre à l'utilisateur de comprendre comment il doit utiliser la station météo afin de récolter différentes données (données capteurs). Voir le guide sur GitHub </p>
-      </div>
+        const langSwitcher = document.getElementById('lang-switcher');
+        if(langSwitcher) {
+            langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
+        }
 
-      <!-- Guide Technique Image -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Guide technique</h3>
-        <img src="img-guide-technique.png" alt="Guide_Technique" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2">Nous avons également créé un guide technique pour permettre de comprendre comment la station fonctionne concrètement. Voir le guide sur GitHub.</p>
-      </div>
-      <!-- Montage Station météo Image -->
-      <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Montage Station météo</h3>
-        <img src="img-montage-station.png" alt="Montage_station" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2">Voici le montage de notre station météo finale.</p>
-      </div>
-
-      <!-- Bouton Retour et Lien GitHub -->
-      <div class="flex space-x-4">
-        <a href="index.html#projects" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Retour aux projets</a>
-        <a href="https://github.com/maelpitois/Systemes_Embarques" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet sur GitHub</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto px-6 text-center">
-      <p>&copy; 2024 Maël Pitois. Tous droits réservés.</p>
-    </div>
-  </footer>
-
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
 </body>
 </html>
