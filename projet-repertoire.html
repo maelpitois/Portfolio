@@ -1,64 +1,54 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-fr="Projet - Répertoire téléphonique" data-en="Project - Phone directory">Projet - Répertoire téléphonique</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    .hover-grow:hover {
-      transform: scale(1.05);
-    }
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.2s forwards;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
+    .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans leading-normal fade-in min-h-screen flex flex-col">
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed fade-in min-h-screen flex flex-col">
 
-  <!-- Section Navigation -->
-  <header class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
+  <header class="bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg text-white shadow-xl sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-4">
-        <select id="lang-switcher" class="bg-gray-700 text-white text-sm rounded border border-gray-600 focus:outline-none p-1 cursor-pointer">
+        <select id="lang-switcher" class="bg-gray-800 text-white text-sm rounded-full border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none px-3 py-1 cursor-pointer hover:bg-gray-700 transition-colors">
           <option value="fr">FR</option>
           <option value="en">EN</option>
         </select>
-        <h1 class="text-3xl font-extrabold">Maël Pitois</h1>
+        <h1 class="text-2xl font-extrabold tracking-tight"><a href="index.html">Maël <span class="text-indigo-400">Pitois</span></a></h1>
       </div>
-      <nav class="space-x-4 hidden md:block">
-        <a href="index.html#about" class="hover:underline text-lg" data-fr="À propos" data-en="About">À propos</a>
-        <a href="index.html#projects" class="hover:underline text-lg" data-fr="Projets" data-en="Projects">Projets</a>
-        <a href="index.html#skills" class="hover:underline text-lg" data-fr="Compétences" data-en="Skills">Compétences</a>
-        <a href="index.html#contact" class="hover:underline text-lg" data-fr="Contact" data-en="Contact">Contact</a>
+      <nav class="space-x-6 hidden md:block font-medium">
+        <a href="index.html#projects" class="hover:text-indigo-400 transition-colors duration-300 flex items-center gap-2"><i class="fas fa-arrow-left"></i> <span data-fr="Retour" data-en="Back">Retour</span></a>
       </nav>
     </div>
   </header>
 
-  <!-- Section Détails du Projet -->
-  <section id="project-details" class="container mx-auto px-6 py-20 flex-grow overlay">
-    <div class="bg-white rounded-lg shadow-lg p-10 max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-4 text-gray-800" data-fr="Répertoire téléphonique" data-en="Phone directory">Répertoire téléphonique</h2>
-      <p class="text-xl mb-6 text-gray-600" data-fr="Ce projet vise à créer un simulateur de modulation en Python, illustrant le processus d'encodage et de transmission d'un message par modulation d'amplitude (ASK). Il montre comment un fichier texte est converti en signal binaire modulé, puis transmis et reçu via un canal de communication simulé, en suivant les étapes classiques de la chaîne de transmission numérique (encodage, modulation, démodulation, décodage)." data-en="This project aims to create a modulation simulator in Python, illustrating the encoding and transmission process of a message by amplitude modulation (ASK). It shows how a text file is converted into a modulated binary signal, then transmitted and received via a simulated communication channel, following the classic steps of the digital transmission chain (encoding, modulation, demodulation, decoding).">Ce projet vise à créer un simulateur de modulation en Python, illustrant le processus d'encodage et de transmission d'un message par modulation d'amplitude (ASK). Il montre comment un fichier texte est converti en signal binaire modulé, puis transmis et reçu via un canal de communication simulé, en suivant les étapes classiques de la chaîne de transmission numérique (encodage, modulation, démodulation, décodage).</p>
+  <section class="container mx-auto px-4 sm:px-6 py-12 lg:py-20 flex-grow">
+    <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 max-w-4xl mx-auto border-t-8 border-gray-700 relative">
+      <h2 class="text-4xl lg:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight" data-fr="Répertoire téléphonique" data-en="Phone directory">Répertoire téléphonique</h2>
+      <p class="text-xl mb-10 text-gray-600 leading-relaxed" data-fr="Ce projet vise à créer un simulateur de modulation en Python, illustrant le processus d'encodage et de transmission d'un message par modulation d'amplitude (ASK). Il montre comment un fichier texte est converti en signal binaire modulé, puis transmis et reçu via un canal de communication simulé, en suivant les étapes classiques de la chaîne de transmission numérique (encodage, modulation, démodulation, décodage)." data-en="This project aims to create a modulation simulator in Python, illustrating the encoding and transmission process of a message by amplitude modulation (ASK). It shows how a text file is converted into a modulated binary signal, then transmitted and received via a simulated communication channel, following the classic steps of the digital transmission chain (encoding, modulation, demodulation, decoding).">Ce projet vise à créer un simulateur de modulation en Python...</p>
       
-      <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Fonctionnalités principales :" data-en="Main features:">Fonctionnalités principales :</h3>
-      <ul class="list-disc list-inside mb-6 text-gray-600">
-        <li data-fr="Ajout et suppression de contacts dans un fichier CSV." data-en="Adding and deleting contacts in a CSV file.">Ajout et suppression de contacts dans un fichier CSV.</li>
-        <li data-fr="Recherche rapide des contacts par nom ou numéro de téléphone." data-en="Quick search for contacts by name or phone number.">Recherche rapide des contacts par nom ou numéro de téléphone.</li>
-        <li data-fr="Génération d'un fichier exécutable pour une utilisation autonome." data-en="Generation of an executable file for standalone use.">Génération d'un fichier exécutable pour une utilisation autonome.</li>
-      </ul>
-      <a href="index.html#projects" class="inline-block mt-4 bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Retour aux projets" data-en="Back to projects">Retour aux projets</a>
+      <div class="bg-gray-50 rounded-2xl p-6 mb-10 border border-gray-100">
+        <h3 class="text-2xl font-bold mb-4 text-gray-800 flex items-center gap-2"><i class="fas fa-list"></i> <span data-fr="Fonctionnalités principales :" data-en="Main features:">Fonctionnalités principales :</span></h3>
+        <ul class="list-none space-y-3 text-gray-700">
+          <li class="flex items-center gap-3"><i class="fas fa-address-book text-gray-500"></i> <span data-fr="Ajout et suppression de contacts dans un fichier CSV." data-en="Adding and deleting contacts in a CSV file.">Ajout et suppression de contacts dans un fichier CSV.</span></li>
+          <li class="flex items-center gap-3"><i class="fas fa-search text-gray-500"></i> <span data-fr="Recherche rapide des contacts par nom ou numéro de téléphone." data-en="Quick search for contacts by name or phone number.">Recherche rapide des contacts par nom ou numéro de téléphone.</span></li>
+          <li class="flex items-center gap-3"><i class="fas fa-file-export text-gray-500"></i> <span data-fr="Génération d'un fichier exécutable pour une utilisation autonome." data-en="Generation of an executable file for standalone use.">Génération d'un fichier exécutable pour une utilisation autonome.</span></li>
+        </ul>
+      </div>
+
+      <div class="mt-10 pt-8 border-t border-gray-100">
+        <a href="index.html#projects" class="inline-flex items-center bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full hover:bg-gray-300 transition-colors duration-300" data-fr="Retour aux projets" data-en="Back to projects"><i class="fas fa-arrow-left mr-2"></i> Retour aux projets</a>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
+  <footer class="bg-gray-900 text-gray-400 py-6 mt-auto">
     <div class="container mx-auto px-6 text-center">
       <p data-fr="&copy; 2024 Maël Pitois. Tous droits réservés." data-en="&copy; 2024 Maël Pitois. All rights reserved.">&copy; 2024 Maël Pitois. Tous droits réservés.</p>
     </div>
@@ -70,21 +60,14 @@
       document.documentElement.lang = lang;
       const switcher = document.getElementById('lang-switcher');
       if(switcher) switcher.value = lang;
-      
       document.querySelectorAll('[data-en]').forEach(el => {
-        if(el.hasAttribute(`data-${lang}`)) {
-          el.innerHTML = el.getAttribute(`data-${lang}`);
-        }
+        if(el.hasAttribute(`data-${lang}`)) el.innerHTML = el.getAttribute(`data-${lang}`);
       });
     }
-
     const savedLang = localStorage.getItem('portfolio_lang') || 'fr';
     setLanguage(savedLang);
-
     const langSwitcher = document.getElementById('lang-switcher');
-    if(langSwitcher) {
-      langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
-    }
+    if(langSwitcher) langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
   </script>
 </body>
 </html>
