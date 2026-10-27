@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet - Base de données qualité de l'air</title>
+  <title data-fr="Projet - Base de données qualité de l'air" data-en="Project - Air quality database">Projet - Base de données qualité de l'air</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     .hover-grow:hover {
@@ -28,12 +28,18 @@
   <!-- Section Navigation -->
   <header class="bg-gray-800 text-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-3xl font-extrabold">Maël Pitois</h1>
-      <nav class="space-x-4">
-        <a href="index.html#about" class="hover:underline text-lg">À propos</a>
-        <a href="index.html#projects" class="hover:underline text-lg">Projets</a>
-        <a href="index.html#skills" class="hover:underline text-lg">Compétences</a>
-        <a href="index.html#contact" class="hover:underline text-lg">Contact</a>
+      <div class="flex items-center space-x-4">
+        <select id="lang-switcher" class="bg-gray-700 text-white text-sm rounded border border-gray-600 focus:outline-none p-1 cursor-pointer">
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+        </select>
+        <h1 class="text-3xl font-extrabold">Maël Pitois</h1>
+      </div>
+      <nav class="space-x-4 hidden md:block">
+        <a href="index.html#about" class="hover:underline text-lg" data-fr="À propos" data-en="About">À propos</a>
+        <a href="index.html#projects" class="hover:underline text-lg" data-fr="Projets" data-en="Projects">Projets</a>
+        <a href="index.html#skills" class="hover:underline text-lg" data-fr="Compétences" data-en="Skills">Compétences</a>
+        <a href="index.html#contact" class="hover:underline text-lg" data-fr="Contact" data-en="Contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -41,42 +47,42 @@
   <!-- Section Détails du Projet -->
   <section id="project-details" class="container mx-auto px-6 py-20 flex-grow">
     <div class="bg-white rounded-lg shadow-lg p-10 max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold mb-4 text-gray-800">Base de données qualité de l'air</h2>
-      <p class="text-xl mb-6 text-gray-600">Ce projet consiste à créer une base de données MySQL pour stocker et analyser des relevés de la qualité de l'air dans différentes régions. L'objectif est d'assurer une gestion efficace des données pour leur consultation et leur analyse.</p>
+      <h2 class="text-4xl font-bold mb-4 text-gray-800" data-fr="Base de données qualité de l'air" data-en="Air quality database">Base de données qualité de l'air</h2>
+      <p class="text-xl mb-6 text-gray-600" data-fr="Ce projet consiste à créer une base de données MySQL pour stocker et analyser des relevés de la qualité de l'air dans différentes régions. L'objectif est d'assurer une gestion efficace des données pour leur consultation et leur analyse." data-en="This project involves creating a MySQL database to store and analyze air quality readings in different regions. The objective is to ensure efficient data management for consultation and analysis.">Ce projet consiste à créer une base de données MySQL pour stocker et analyser des relevés de la qualité de l'air dans différentes régions. L'objectif est d'assurer une gestion efficace des données pour leur consultation et leur analyse.</p>
       
-      <h3 class="text-2xl font-semibold mb-4 text-gray-700">Fonctionnalités principales :</h3>
+      <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Fonctionnalités principales :" data-en="Main features:">Fonctionnalités principales :</h3>
       <ul class="list-disc list-inside mb-6 text-gray-600">
-        <li>Stockage structuré des données de qualité de l'air avec MySQL.</li>
-        <li>Utilisation de requêtes SQL pour l'analyse des données.</li>
-        <li>Optimisation de la BDD afin d'optimiser le temps pour la consultation des données.</li>
-        <li>Utilisation d'un MCD et d'un MLD pour la modélisation de la base de données.</li>
+        <li data-fr="Stockage structuré des données de qualité de l'air avec MySQL." data-en="Structured storage of air quality data with MySQL.">Stockage structuré des données de qualité de l'air avec MySQL.</li>
+        <li data-fr="Utilisation de requêtes SQL pour l'analyse des données." data-en="Use of SQL queries for data analysis.">Utilisation de requêtes SQL pour l'analyse des données.</li>
+        <li data-fr="Optimisation de la BDD afin d'optimiser le temps pour la consultation des données." data-en="Optimization of the DB to improve data consultation time.">Optimisation de la BDD afin d'optimiser le temps pour la consultation des données.</li>
+        <li data-fr="Utilisation d'un MCD et d'un MLD pour la modélisation de la base de données." data-en="Use of a CDM and LDM for database modeling.">Utilisation d'un MCD et d'un MLD pour la modélisation de la base de données.</li>
       </ul>
 
       <!-- MCD Image -->
       <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Modèle Conceptuel de Données (MCD)</h3>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Modèle Conceptuel de Données (MCD)" data-en="Conceptual Data Model (CDM)">Modèle Conceptuel de Données (MCD)</h3>
         <img src="img-MCD-bdd.png" alt="MCD" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2">Le MCD illustre les entités principales (représentées par les blocs bleus) et leurs relations (représentées par les blocs orange) pour modéliser les informations nécessaires à la gestion des relevés de qualité de l'air. Il permet d'établir la base de notre BDD.</p>
+        <p class="text-lg text-gray-700 mt-2" data-fr="Le MCD illustre les entités principales (représentées par les blocs bleus) et leurs relations (représentées par les blocs orange) pour modéliser les informations nécessaires à la gestion des relevés de qualité de l'air. Il permet d'établir la base de notre BDD." data-en="The CDM illustrates the main entities (represented by blue blocks) and their relationships (represented by orange blocks) to model the information needed to manage air quality readings. It establishes the foundation of our DB.">Le MCD illustre les entités principales (représentées par les blocs bleus) et leurs relations (représentées par les blocs orange) pour modéliser les informations nécessaires à la gestion des relevés de qualité de l'air. Il permet d'établir la base de notre BDD.</p>
       </div>
 
       <!-- MLD Image -->
       <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Modèle Logique de Données (MLD)</h3>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Modèle Logique de Données (MLD)" data-en="Logical Data Model (LDM)">Modèle Logique de Données (MLD)</h3>
         <img src="img-MLD-bdd.png" alt="MLD" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2">Après avoir schématisé le MCD, il faut faire le MLD qui traduit le MCD en une structure adaptée à la base de données relationnelle, détaillant les tables et leurs relations. Ensuite, il faut implémenter le MLD dans le logiciel MySQL et la BDD est créée. </p>
+        <p class="text-lg text-gray-700 mt-2" data-fr="Après avoir schématisé le MCD, il faut faire le MLD qui traduit le MCD en une structure adaptée à la base de données relationnelle, détaillant les tables et leurs relations. Ensuite, il faut implémenter le MLD dans le logiciel MySQL et la BDD est créée." data-en="After diagramming the CDM, we must create the LDM which translates the CDM into a structure suitable for the relational database, detailing the tables and their relationships. Then, the LDM is implemented in MySQL software and the DB is created.">Après avoir schématisé le MCD, il faut faire le MLD qui traduit le MCD en une structure adaptée à la base de données relationnelle, détaillant les tables et leurs relations. Ensuite, il faut implémenter le MLD dans le logiciel MySQL et la BDD est créée. </p>
       </div>
 
       <!-- Requête SQL Image -->
       <div class="mb-6">
-        <h3 class="text-2xl font-semibold mb-4 text-gray-700">Exemple de Requête SQL</h3>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-700" data-fr="Exemple de Requête SQL" data-en="SQL Query Example">Exemple de Requête SQL</h3>
         <img src="img-requete-bdd.png" alt="Requête SQL" class="w-3/4 h-auto rounded-lg shadow-md hover-grow border-black mx-auto">
-        <p class="text-lg text-gray-700 mt-2">Pour finir ce projet il suffit de tester la BDD avec des requêtes, voici un exemple de requête SQL utilisée pour obtenir la quantité de gaz relevée dans la région "Ile de France" pour l'année 2020, en groupant par type de gaz.</p>
+        <p class="text-lg text-gray-700 mt-2" data-fr="Pour finir ce projet il suffit de tester la BDD avec des requêtes, voici un exemple de requête SQL utilisée pour obtenir la quantité de gaz relevée dans la région &quot;Ile de France&quot; pour l'année 2020, en groupant par type de gaz." data-en="To finish this project, we test the DB with queries; here is an example of an SQL query used to get the amount of gas recorded in the &quot;Ile de France&quot; region for the year 2020, grouped by gas type.">Pour finir ce projet il suffit de tester la BDD avec des requêtes, voici un exemple de requête SQL utilisée pour obtenir la quantité de gaz relevée dans la région "Ile de France" pour l'année 2020, en groupant par type de gaz.</p>
       </div>
 
       <!-- Bouton Retour et Lien GitHub -->
-      <div class="flex space-x-4">
-        <a href="index.html#projects" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Retour aux projets</a>
-        <a href="https://github.com/maelpitois/Projet_BDD" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300">Voir le projet sur GitHub</a>
+      <div class="flex space-x-4 mt-8">
+        <a href="index.html#projects" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Retour aux projets" data-en="Back to projects">Retour aux projets</a>
+        <a href="https://github.com/maelPitois/Projet_BDD" class="bg-gray-800 text-white py-3 px-6 rounded-full hover:bg-gray-900 shadow-md hover-grow transition-transform duration-300" data-fr="Voir le projet sur GitHub" data-en="View project on GitHub">Voir le projet sur GitHub</a>
       </div>
     </div>
   </section>
@@ -84,9 +90,31 @@
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-6">
     <div class="container mx-auto px-6 text-center">
-      <p>&copy; 2024 Maël Pitois. Tous droits réservés.</p>
+      <p data-fr="&copy; 2024 Maël Pitois. Tous droits réservés." data-en="&copy; 2024 Maël Pitois. All rights reserved.">&copy; 2024 Maël Pitois. Tous droits réservés.</p>
     </div>
   </footer>
 
+  <script>
+    function setLanguage(lang) {
+      localStorage.setItem('portfolio_lang', lang);
+      document.documentElement.lang = lang;
+      const switcher = document.getElementById('lang-switcher');
+      if(switcher) switcher.value = lang;
+      
+      document.querySelectorAll('[data-en]').forEach(el => {
+        if(el.hasAttribute(`data-${lang}`)) {
+          el.innerHTML = el.getAttribute(`data-${lang}`);
+        }
+      });
+    }
+
+    const savedLang = localStorage.getItem('portfolio_lang') || 'fr';
+    setLanguage(savedLang);
+
+    const langSwitcher = document.getElementById('lang-switcher');
+    if(langSwitcher) {
+      langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
+    }
+  </script>
 </body>
 </html>
