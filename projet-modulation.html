@@ -1,106 +1,151 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-fr="Projet - Modulation ASK/FSK" data-en="Project - ASK/FSK Modulation">Projet - Modulation ASK/FSK</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <style>
-    .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
-    @keyframes fadeIn { to { opacity: 1; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="Projet — Simulateur de Modulation ASK & FSK" data-en="Project — ASK & FSK Modulation Simulator">Projet — Simulateur de Modulation ASK & FSK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] } } }
+        }
+    </script>
+    <style>
+        body { background-color: #090D16; color: #F8FAFC; }
+        .glass-nav { background: rgba(9, 13, 22, 0.8); backdrop-filter: blur(16px); }
+        .bento-card { background: rgba(17, 24, 39, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed fade-in min-h-screen flex flex-col selection:bg-indigo-200">
+<body class="font-sans antialiased min-h-screen flex flex-col">
 
-  <header class="bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg text-white shadow-xl sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <select id="lang-switcher" class="bg-gray-800 text-white text-sm rounded-full border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none px-3 py-1 cursor-pointer hover:bg-gray-700 transition-colors">
-          <option value="fr">FR</option>
-          <option value="en">EN</option>
-        </select>
-        <h1 class="text-2xl font-extrabold tracking-tight"><a href="index.html">Maël <span class="text-indigo-400">Pitois</span></a></h1>
-      </div>
-      <nav class="space-x-6 hidden md:block font-medium">
-        <a href="index.html#projects" class="hover:text-indigo-400 transition-colors duration-300 flex items-center gap-2"><i class="fas fa-arrow-left"></i> <span data-fr="Retour au portfolio" data-en="Back to portfolio">Retour au portfolio</span></a>
-      </nav>
-    </div>
-  </header>
+    <!-- Navigation -->
+    <header class="glass-nav border-b border-white/10 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-5">
+                <div class="inline-flex items-center bg-slate-900/90 p-1 rounded-xl border border-white/10 font-mono text-xs">
+                    <button onclick="setLanguage('fr')" id="btn-fr" class="px-2.5 py-1.5 rounded-lg font-semibold transition-all">FR</button>
+                    <button onclick="setLanguage('en')" id="btn-en" class="px-2.5 py-1.5 rounded-lg font-semibold transition-all">EN</button>
+                </div>
+                <a href="index.html" class="font-bold text-lg tracking-tight text-white">Maël <span class="text-indigo-400">Pitois</span></a>
+            </div>
+            <a href="index.html#projects" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-medium text-slate-200 transition-all">
+                <i class="fas fa-arrow-left text-xs"></i>
+                <span data-fr="Tous les projets" data-en="All projects">Tous les projets</span>
+            </a>
+        </div>
+    </header>
 
-  <section class="container mx-auto px-4 sm:px-6 py-12 lg:py-20 flex-grow">
-    <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 max-w-5xl mx-auto border-t-8 border-blue-500 relative overflow-hidden">
-      <h2 class="text-4xl lg:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight" data-fr="Simulateur de Modulation ASK et FSK" data-en="ASK and FSK Modulation Simulator">Simulateur de Modulation ASK et FSK</h2>
-      <p class="text-xl mb-10 text-gray-600 leading-relaxed" data-fr="Ce projet consiste à développer un simulateur qui illustre le processus de modulation d'amplitude (ASK) et de fréquence (FSK) en Python. L'objectif est de montrer comment un message peut être encodé, modulé et transmis." data-en="This project involves developing a simulator that illustrates the amplitude (ASK) and frequency (FSK) modulation process in Python. The objective is to show how a message can be encoded, modulated, and transmitted.">Ce projet consiste à développer un simulateur qui illustre le processus de modulation d'amplitude (ASK) et de fréquence (FSK) en Python.</p>
+    <!-- Contenu Principal -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow">
+        
+        <div class="mb-12">
+            <div class="flex flex-wrap gap-2 font-mono text-xs text-cyan-400 mb-4">
+                <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">Python</span>
+                <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">Traitement du Signal</span>
+                <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">ASK / FSK</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white mb-6" data-fr="Simulateur de Modulation ASK et FSK en Python" data-en="ASK and FSK Modulation Simulator in Python">Simulateur de Modulation ASK et FSK en Python</h1>
+            <p class="text-slate-400 text-lg leading-relaxed max-w-3xl" data-fr="Développement d'un simulateur illustrant le processus de modulation d'amplitude (ASK) et de fréquence (FSK) en Python. L'objectif est de démontrer comment un message texte est encodé, modulé et transmis via une chaîne numérique avant d'être démodulé et décodé." data-en="Development of a simulator illustrating Amplitude Shift Keying (ASK) and Frequency Shift Keying (FSK) in Python. The goal is to demonstrate how a text message is encoded, modulated, and transmitted through a digital chain before being demodulated and decoded.">
+                Développement d'un simulateur illustrant le processus de modulation d'amplitude (ASK) et de fréquence (FSK) en Python. L'objectif est de démontrer comment un message texte est encodé, modulé et transmis via une chaîne numérique avant d'être démodulé et décodé.
+            </p>
+        </div>
 
-      <div class="bg-blue-50 rounded-2xl p-6 mb-10 border border-blue-100">
-        <h3 class="text-2xl font-bold mb-4 text-blue-800 flex items-center gap-2"><i class="fas fa-cogs"></i> <span data-fr="Fonctionnalités principales :" data-en="Main features:">Fonctionnalités principales :</span></h3>
-        <ul class="list-none space-y-3 text-gray-700">
-          <li class="flex items-start gap-3"><i class="fas fa-code text-blue-500 mt-1"></i> <span data-fr="Encodage : Fichier texte -> ASCII -> signal binaire." data-en="Encoding: Text file -> ASCII -> binary signal.">Encodage : Fichier texte -> ASCII -> signal binaire.</span></li>
-          <li class="flex items-start gap-3"><i class="fas fa-wave-square text-blue-500 mt-1"></i> <span data-fr="Modulation : Application ASK et FSK." data-en="Modulation: Application of ASK and FSK.">Modulation : Application ASK et FSK.</span></li>
-          <li class="flex items-start gap-3"><i class="fas fa-broadcast-tower text-blue-500 mt-1"></i> <span data-fr="Transmission : Simulation via un canal de communication." data-en="Transmission: Simulation via a communication channel.">Transmission : Simulation via un canal de communication.</span></li>
-          <li class="flex items-start gap-3"><i class="fas fa-satellite-dish text-blue-500 mt-1"></i> <span data-fr="Réception : Démodulation et décodage du signal reçu." data-en="Reception: Demodulation and decoding of the received signal.">Réception : Démodulation et décodage du signal reçu.</span></li>
-        </ul>
-      </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-14">
+            <div class="lg:col-span-2 bento-card rounded-2xl p-6 sm:p-8">
+                <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <i class="fas fa-wave-square text-cyan-400"></i>
+                    <span data-fr="Architecture de la chaîne" data-en="Transmission Chain Features">Architecture de la chaîne</span>
+                </h2>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> <span data-fr="Encodage : Conversion de texte en ASCII puis en signal binaire." data-en="Encoding: Text to ASCII and binary signal conversion.">Encodage : Conversion de texte en ASCII puis en signal binaire.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> <span data-fr="Modulation : Application des techniques ASK et FSK." data-en="Modulation: Application of ASK and FSK techniques.">Modulation : Application des techniques ASK et FSK.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> <span data-fr="Réception : Démodulation et décodage pour reconstituer le message." data-en="Reception: Signal demodulation and decoding to recover the message.">Réception : Démodulation et décodage pour reconstituer le message.</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-400 mt-1"></i> <span data-fr="Analyse comparative des performances ASK vs FSK." data-en="Comparative performance analysis between ASK and FSK.">Analyse comparative des performances ASK vs FSK.</span></li>
+                </ul>
+            </div>
 
-      <div class="space-y-16">
-        <div class="group">
-          <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Chaîne de transmission" data-en="Transmission chain">Chaîne de transmission</h3>
-          <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
-            <img src="img-chaine-transmission-modulation.png" alt="Chaîne" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
-          </div>
+            <div class="bento-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                    <p class="font-mono text-xs text-slate-400 mb-2" data-fr="// DÉPÔT DU PROJET" data-en="// PROJECT REPOSITORY">// DÉPÔT DU PROJET</p>
+                    <h3 class="text-xl font-bold text-white mb-2">Code Python</h3>
+                    <p class="text-slate-400 text-sm mb-6" data-fr="Explorez les algorithmes de modulation et démodulation sur GitHub." data-en="Explore the modulation and demodulation algorithms on GitHub.">Explorez les algorithmes de modulation et démodulation sur GitHub.</p>
+                </div>
+                <a href="https://github.com/maelpitois/Projet_Modulation" target="_blank" class="w-full py-3.5 px-5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                    <i class="fab fa-github text-lg"></i>
+                    <span data-fr="Voir sur GitHub" data-en="View on GitHub">Voir sur GitHub</span>
+                </a>
+            </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="group">
-            <h3 class="text-xl font-bold mb-4 text-gray-900" data-fr="Destinataire & Démodulation" data-en="Recipient & Demodulation">Destinataire & Démodulation</h3>
-            <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
-              <img src="img-destinataire-modulation.png" alt="Démodulation" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+            <div class="bento-card rounded-3xl p-6 flex flex-col justify-between">
+                <div>
+                    <span class="font-mono text-xs text-cyan-400">01 // ARCHITECTURE</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-2" data-fr="Chaîne de transmission" data-en="Transmission Chain">Chaîne de transmission</h3>
+                    <p class="text-slate-400 text-sm mb-4" data-fr="Processus complet depuis l'encodage jusqu'à la réception via un canal simulé." data-en="Complete process from encoding to reception through a simulated channel.">Processus complet depuis l'encodage jusqu'à la réception via un canal simulé.</p>
+                </div>
+                <div class="bg-slate-950 p-3 rounded-2xl border border-white/10">
+                    <img src="img-chaine-transmission-modulation.png" alt="Chaîne de transmission" class="w-full h-56 object-contain mx-auto rounded-lg">
+                </div>
             </div>
-          </div>
-          <div class="group">
-            <h3 class="text-xl font-bold mb-4 text-gray-900" data-fr="Choix de la modulation" data-en="Modulation choice">Choix de la modulation</h3>
-            <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
-              <img src="img-choix-modulation.png" alt="Choix" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
+
+            <div class="bento-card rounded-3xl p-6 flex flex-col justify-between">
+                <div>
+                    <span class="font-mono text-xs text-cyan-400">02 // ROUTAGE</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-2" data-fr="Destinataire et Démodulation" data-en="Recipient and Demodulation">Destinataire et Démodulation</h3>
+                    <p class="text-slate-400 text-sm mb-4" data-fr="Sélection de l'expéditeur et du destinataire et extraction du message d'origine." data-en="Selection of sender and recipient and extraction of the original message.">Sélection de l'expéditeur et du destinataire et extraction du message d'origine.</p>
+                </div>
+                <div class="bg-slate-950 p-3 rounded-2xl border border-white/10">
+                    <img src="img-destinataire-modulation.png" alt="Destinataire" class="w-full h-56 object-contain mx-auto rounded-lg">
+                </div>
             </div>
-          </div>
+
+            <div class="bento-card rounded-3xl p-6 flex flex-col justify-between">
+                <div>
+                    <span class="font-mono text-xs text-cyan-400">03 // PARAMÉTRAGE</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-2" data-fr="Choix de la modulation (ASK / FSK)" data-en="Modulation Selection (ASK / FSK)">Choix de la modulation (ASK / FSK)</h3>
+                    <p class="text-slate-400 text-sm mb-4" data-fr="Sélection entre Amplitude Shift Keying (ASK) et Frequency Shift Keying (FSK)." data-en="Selection between Amplitude Shift Keying (ASK) and Frequency Shift Keying (FSK).">Sélection entre Amplitude Shift Keying (ASK) et Frequency Shift Keying (FSK).</p>
+                </div>
+                <div class="bg-slate-950 p-3 rounded-2xl border border-white/10">
+                    <img src="img-choix-modulation.png" alt="Choix de modulation" class="w-full h-56 object-contain mx-auto rounded-lg">
+                </div>
+            </div>
+
+            <div class="bento-card rounded-3xl p-6 flex flex-col justify-between">
+                <div>
+                    <span class="font-mono text-xs text-cyan-400">04 // RÉSULTATS</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-2" data-fr="Signal modulé et réception" data-en="Modulated Signal & Reception">Signal modulé et réception</h3>
+                    <p class="text-slate-400 text-sm mb-4" data-fr="Visualisation des résultats obtenus après modulation, transmission et décodage." data-en="Visualization of the results obtained after modulation, transmission, and decoding.">Visualisation des résultats obtenus après modulation, transmission et décodage.</p>
+                </div>
+                <div class="bg-slate-950 p-3 rounded-2xl border border-white/10">
+                    <img src="img-resultat-modulation.png" alt="Résultat" class="w-full h-56 object-contain mx-auto rounded-lg">
+                </div>
+            </div>
         </div>
 
-        <div class="group">
-          <h3 class="text-2xl font-bold mb-4 text-gray-900" data-fr="Résultat de la modulation" data-en="Modulation result">Résultat de la modulation</h3>
-          <div class="overflow-hidden rounded-2xl shadow-lg border border-gray-200 mb-4 bg-gray-100 p-2">
-            <img src="img-resultat-modulation.png" alt="Résultat" class="w-full h-auto rounded-xl transform group-hover:scale-[1.02] transition-transform duration-500">
-          </div>
-        </div>
-      </div>
+    </main>
 
-      <div class="flex flex-col sm:flex-row gap-4 mt-16 pt-8 border-t border-gray-100">
-        <a href="index.html#projects" class="text-center bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full hover:bg-gray-300 transition-colors duration-300" data-fr="Retour aux projets" data-en="Back to projects"><i class="fas fa-arrow-left mr-2"></i> Retour</a>
-        <a href="https://github.com/maelpitois/Projet_Modulation" target="_blank" class="text-center bg-gray-900 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-2xl hover:bg-black transform hover:-translate-y-1 transition-all duration-300" data-fr="Voir sur GitHub" data-en="View on GitHub"><i class="fab fa-github mr-2"></i> Voir sur GitHub</a>
-      </div>
-    </div>
-  </section>
+    <footer class="border-t border-white/10 py-8 text-center text-xs font-mono text-slate-500">
+        <p data-fr="© 2026 Maël Pitois — Tous droits réservés." data-en="© 2026 Maël Pitois — All rights reserved.">© 2026 Maël Pitois — Tous droits réservés.</p>
+    </footer>
 
-  <footer class="bg-gray-900 text-gray-400 py-6 mt-auto">
-    <div class="container mx-auto px-6 text-center">
-      <p data-fr="&copy; 2024 Maël Pitois. Tous droits réservés." data-en="&copy; 2024 Maël Pitois. All rights reserved.">&copy; 2024 Maël Pitois. Tous droits réservés.</p>
-    </div>
-  </footer>
-
-  <script>
-    function setLanguage(lang) {
-      localStorage.setItem('portfolio_lang', lang);
-      document.documentElement.lang = lang;
-      const switcher = document.getElementById('lang-switcher');
-      if(switcher) switcher.value = lang;
-      document.querySelectorAll('[data-en]').forEach(el => {
-        if(el.hasAttribute(`data-${lang}`)) el.innerHTML = el.getAttribute(`data-${lang}`);
-      });
-    }
-    const savedLang = localStorage.getItem('portfolio_lang') || 'fr';
-    setLanguage(savedLang);
-    const langSwitcher = document.getElementById('lang-switcher');
-    if(langSwitcher) langSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
-  </script>
+    <script>
+        function setLanguage(lang) {
+            localStorage.setItem('portfolio_lang', lang);
+            document.documentElement.lang = lang;
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.className = lang === 'fr' ? 'px-2.5 py-1.5 rounded-lg font-semibold bg-indigo-600 text-white shadow transition-all' : 'px-2.5 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition-all';
+                btnEn.className = lang === 'en' ? 'px-2.5 py-1.5 rounded-lg font-semibold bg-indigo-600 text-white shadow transition-all' : 'px-2.5 py-1.5 rounded-lg font-semibold text-slate-400 hover:text-white transition-all';
+            }
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if (el.hasAttribute(`data-${lang}`)) el.innerHTML = el.getAttribute(`data-${lang}`);
+            });
+        }
+        setLanguage(localStorage.getItem('portfolio_lang') || 'fr');
+    </script>
 </body>
 </html>
